@@ -3,76 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dimash Janibekov — Automation / Backend Engineer</title>
+  <title>Димаш Джанибеков — Python Backend / Automation Engineer</title>
 
-  <!-- SEO / OpenGraph -->
-  <meta name="description" content="Dimash Janibekov — Automation & Backend Engineer. Python, APIs, Infrastructure, Automation, CRM integrations.">
-  <meta property="og:title" content="Dimash Janibekov — Automation / Backend Engineer">
-  <meta property="og:description" content="Automation & Backend Engineer · Python · API · Infrastructure">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="preview.png">
+  <meta
+    name="description"
+    content="Димаш Джанибеков — Python Backend / Automation Engineer. Backend, API, Linux, автоматизация, CRM/helpdesk интеграции, мониторинг, Telegram-боты."
+  />
+  <meta property="og:title" content="Димаш Джанибеков — Python Backend / Automation Engineer" />
+  <meta
+    property="og:description"
+    content="Python · Backend · Automation · Linux · API · Infrastructure · Integrations"
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="preview.png" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root {
       --bg: #0b0f19;
+      --bg-soft: #111827;
       --card: #121826;
+      --card-2: #0f172a;
       --text: #e5e7eb;
       --muted: #9ca3af;
       --accent: #38bdf8;
+      --accent-2: #22c55e;
       --border: #1f2937;
-      --glass: rgba(255,255,255,0.03);
+      --glass: rgba(255, 255, 255, 0.03);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
     }
 
     [data-theme="light"] {
       --bg: #f8fafc;
+      --bg-soft: #eef4fb;
       --card: #ffffff;
-      --text: #020617;
+      --card-2: #f8fafc;
+      --text: #0f172a;
       --muted: #475569;
       --accent: #0284c7;
-      --border: #e2e8f0;
-      --glass: rgba(2,6,23,0.03);
+      --accent-2: #16a34a;
+      --border: #dbe4f0;
+      --glass: rgba(2, 6, 23, 0.03);
+      --shadow: 0 18px 42px rgba(2, 6, 23, 0.08);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top, #111827 0%, #020617 100%);
+      background:
+        radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 28%),
+        linear-gradient(180deg, var(--bg) 0%, #020617 100%);
       color: var(--text);
       line-height: 1.65;
-      transition: background 0.3s ease, color 0.3s ease;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
     body[data-theme="light"] {
-      background: radial-gradient(circle at top, #ffffff 0%, #f1f5f9 100%);
+      background:
+        radial-gradient(circle at top, rgba(2, 132, 199, 0.08), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg-soft) 100%);
+    }
+
+    a {
+      color: inherit;
     }
 
     .container {
-      max-width: 1040px;
+      width: min(1120px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 48px 20px 90px;
+      padding: 36px 0 88px;
     }
-
-    /* ---------- TOPBAR ---------- */
 
     .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 64px;
-      gap: 14px;
+      gap: 16px;
+      margin-bottom: 46px;
+      padding: 14px 18px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(10, 15, 30, 0.66);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+    }
+
+    body[data-theme="light"] .topbar {
+      background: rgba(255, 255, 255, 0.82);
     }
 
     .logo {
-      font-weight: 700;
-      font-size: 1.15rem;
+      font-weight: 800;
+      font-size: 1rem;
       letter-spacing: 0.4px;
       color: var(--accent);
+      white-space: nowrap;
     }
 
     .controls {
@@ -84,75 +126,61 @@
 
     .controls button,
     .controls a {
-      background: transparent;
+      appearance: none;
       border: 1px solid var(--border);
+      background: transparent;
       color: var(--muted);
-      padding: 6px 12px;
-      border-radius: 9px;
+      border-radius: 11px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
       cursor: pointer;
-      transition: 0.2s ease;
-      font-weight: 500;
-      font-size: 0.85rem;
       text-decoration: none;
+      transition: 0.2s ease;
     }
 
-    .controls button.active,
     .controls button:hover,
-    .controls a:hover {
-      color: var(--text);
+    .controls a:hover,
+    .controls button.active {
       border-color: var(--accent);
+      color: var(--text);
       background: rgba(56, 189, 248, 0.08);
     }
 
     .primary-btn {
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      color: #020617 !important;
+      background: linear-gradient(135deg, var(--accent), #0ea5e9) !important;
+      color: #04111f !important;
       border: none !important;
-      padding: 7px 14px;
-      border-radius: 10px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.25s ease;
-      box-shadow: 0 6px 20px rgba(56,189,248,0.25);
+      box-shadow: 0 10px 28px rgba(56, 189, 248, 0.28);
     }
 
     .primary-btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 10px 28px rgba(56,189,248,0.35);
+      box-shadow: 0 16px 34px rgba(56, 189, 248, 0.35);
     }
 
-    /* ---------- HERO ---------- */
-
-    header { margin-bottom: 78px; }
+    header {
+      margin-bottom: 74px;
+    }
 
     .hero {
       display: grid;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: 170px 1fr;
       gap: 34px;
       align-items: center;
     }
 
-    /* Фото — рамка-заглушка */
     .avatar-frame {
-      width: 148px;
-      height: 148px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      position: relative;
-      background:
-        linear-gradient(135deg, rgba(56,189,248,0.35), rgba(56,189,248,0.05)),
-        radial-gradient(circle at top, rgba(255,255,255,0.18), rgba(255,255,255,0.02));
       padding: 4px;
+      background:
+        linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(34, 197, 94, 0.2)),
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.02));
       box-shadow:
-        0 0 0 6px rgba(56,189,248,0.08),
-        0 25px 60px rgba(0,0,0,0.45);
-    }
-
-    .avatar-frame::before {
-      content: none;
-    }
-
-    body[data-theme="light"] .avatar-frame::before {
-      color: rgba(2,6,23,0.4);
+        0 0 0 6px rgba(56, 189, 248, 0.07),
+        0 26px 55px rgba(0, 0, 0, 0.42);
     }
 
     .avatar {
@@ -165,22 +193,41 @@
     }
 
     h1 {
-      font-size: clamp(2.3rem, 5vw, 3.4rem);
-      margin: 0 0 10px;
-      letter-spacing: -0.7px;
+      font-size: clamp(2.35rem, 5vw, 3.65rem);
+      line-height: 1.08;
+      margin: 0 0 12px;
+      letter-spacing: -1px;
     }
 
     .subtitle {
-      font-size: 1.15rem;
       color: var(--muted);
+      font-size: 1.12rem;
       margin-bottom: 18px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge {
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      background: rgba(56, 189, 248, 0.08);
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 600;
     }
 
     .contacts {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px 22px;
-      font-size: 0.95rem;
+      gap: 12px 20px;
+      font-size: 0.96rem;
+      color: var(--muted);
     }
 
     .contacts a {
@@ -191,62 +238,116 @@
     }
 
     .contacts a:hover {
+      color: var(--accent);
       border-bottom-color: var(--accent);
+    }
+
+    section {
+      margin-bottom: 76px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 24px;
+      font-size: 1.65rem;
+      letter-spacing: -0.4px;
+    }
+
+    .section-title span:first-child {
       color: var(--accent);
     }
 
-    /* ---------- SECTIONS ---------- */
-
-    section { margin-bottom: 86px; }
-
-    .section-title {
-      font-size: 1.65rem;
-      margin-bottom: 26px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .card,
+    .profile,
+    .project-card,
+    .quick-item,
+    .stack-block {
+      background:
+        linear-gradient(180deg, var(--glass), transparent),
+        linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
     }
-
-    .section-title span { color: var(--accent); }
 
     .card {
-      background: linear-gradient(180deg, var(--glass), transparent);
-      border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 34px 34px 36px;
-      margin-bottom: 30px;
-      box-shadow: 0 26px 65px rgba(0,0,0,0.45);
-      backdrop-filter: blur(6px);
+      padding: 30px;
     }
 
-    body[data-theme="light"] .card {
-      box-shadow: 0 16px 40px rgba(2,6,23,0.08);
+    .profile {
+      border-radius: 28px;
+      padding: 36px;
+      background:
+        linear-gradient(180deg, rgba(56, 189, 248, 0.09), rgba(56, 189, 248, 0.02)),
+        linear-gradient(180deg, var(--glass), transparent);
     }
 
     .lead {
-      font-size: 1.05rem;
-      color: #d1d5db;
-      max-width: 880px;
+      color: #d6deeb;
+      font-size: 1.04rem;
+      margin: 0 0 14px;
+      max-width: 920px;
     }
 
-    body[data-theme="light"] .lead { color: #334155; }
+    body[data-theme="light"] .lead {
+      color: #334155;
+    }
 
-    /* ---------- STACK ---------- */
+    blockquote {
+      margin: 22px 0 0;
+      padding-left: 18px;
+      border-left: 3px solid var(--accent);
+      color: #c9d8ee;
+      font-style: italic;
+    }
+
+    body[data-theme="light"] blockquote {
+      color: #475569;
+    }
+
+    .quick-grid,
+    .stack,
+    .grid-2,
+    .projects-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .quick-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .quick-item {
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .quick-item .k {
+      color: var(--muted);
+      font-size: 0.83rem;
+      margin-bottom: 4px;
+    }
+
+    .quick-item .v {
+      font-size: 1rem;
+      font-weight: 700;
+    }
 
     .stack {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px 22px;
-      margin-top: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .stack-block {
+      padding: 18px;
+      border-radius: 18px;
     }
 
     .stack-block h4 {
       margin: 0 0 8px;
       font-size: 1rem;
-      color: #f9fafb;
     }
-
-    body[data-theme="light"] .stack-block h4 { color: #020617; }
 
     .stack-block p {
       margin: 0;
@@ -254,18 +355,16 @@
       color: var(--muted);
     }
 
-    /* ---------- EXPERIENCE ---------- */
-
     .timeline {
       display: flex;
       flex-direction: column;
-      gap: 34px;
+      gap: 28px;
     }
 
     .job {
       display: grid;
-      grid-template-columns: 1fr 3fr;
-      gap: 24px;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
     }
 
     .job-meta {
@@ -274,10 +373,21 @@
     }
 
     .job-meta strong {
-      color: var(--text);
-      font-size: 1.05rem;
       display: block;
+      color: var(--text);
+      font-size: 1.07rem;
       margin-bottom: 4px;
+    }
+
+    .job-role {
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .job-body p {
+      margin: 0 0 14px;
+      color: var(--muted);
     }
 
     .job-body ul {
@@ -286,132 +396,167 @@
     }
 
     .job-body li {
-      margin-bottom: 7px;
-      color: #d1d5db;
+      margin-bottom: 8px;
+      color: #d3dbe8;
     }
 
-    body[data-theme="light"] .job-body li { color: #334155; }
+    body[data-theme="light"] .job-body li {
+      color: #334155;
+    }
 
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 14px;
+      margin-top: 16px;
     }
 
     .tag {
-      font-size: 0.72rem;
-      padding: 4px 10px;
+      font-size: 0.76rem;
+      line-height: 1;
+      padding: 7px 10px;
       border-radius: 999px;
       background: rgba(56, 189, 248, 0.12);
       color: #7dd3fc;
-      border: 1px solid rgba(56, 189, 248, 0.25);
+      border: 1px solid rgba(56, 189, 248, 0.22);
     }
 
     body[data-theme="light"] .tag {
-      background: rgba(2,132,199,0.1);
+      background: rgba(2, 132, 199, 0.1);
       color: #0369a1;
-      border-color: rgba(2,132,199,0.25);
+      border-color: rgba(2, 132, 199, 0.2);
     }
-
-    /* ---------- GRID ---------- */
 
     .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
-    .list { padding-left: 18px; margin: 0; }
-
-    .list li { margin-bottom: 6px; color: #d1d5db; }
-
-    body[data-theme="light"] .list li { color: #334155; }
-
-    /* ---------- PROFILE ---------- */
-
-    .profile {
-      background: linear-gradient(180deg, rgba(56,189,248,0.06), rgba(56,189,248,0.01));
-      border: 1px solid rgba(56,189,248,0.25);
-      border-radius: 26px;
-      padding: 38px 40px 42px;
-      box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+    .list {
+      margin: 0;
+      padding-left: 18px;
     }
 
-    body[data-theme="light"] .profile {
-      box-shadow: 0 16px 40px rgba(2,6,23,0.08);
+    .list li {
+      margin-bottom: 7px;
+      color: #d3dbe8;
     }
 
-    .profile blockquote {
-      margin: 28px 0 0;
-      padding-left: 16px;
-      border-left: 3px solid var(--accent);
-      color: #cbd5f5;
-      font-size: 0.95rem;
-      font-style: italic;
+    body[data-theme="light"] .list li {
+      color: #334155;
     }
-
-    body[data-theme="light"] .profile blockquote { color: #475569; }
-
-    /* ---------- PROJECTS ---------- */
 
     .projects-grid {
-      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 26px;
     }
 
     .project-card {
-      border: 1px solid var(--border);
       border-radius: 22px;
-      padding: 26px 26px 28px;
-      background: linear-gradient(180deg, var(--glass), transparent);
-      box-shadow: 0 22px 55px rgba(0,0,0,0.45);
-      transition: 0.3s ease;
+      padding: 24px;
+      transition: 0.25s ease;
+      cursor: pointer;
     }
 
     .project-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 28px 70px rgba(0,0,0,0.55);
       border-color: var(--accent);
     }
 
-    body[data-theme="light"] .project-card {
-      box-shadow: 0 14px 36px rgba(2,6,23,0.08);
-    }
-
-    body[data-theme="light"] .project-card:hover {
-      box-shadow: 0 20px 50px rgba(2,6,23,0.12);
-    }
-
     .project-title {
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 6px;
+      font-size: 1rem;
     }
 
     .project-desc {
-      font-size: 0.9rem;
       color: var(--muted);
-      margin-bottom: 10px;
+      font-size: 0.93rem;
+      margin-bottom: 12px;
+      min-height: 44px;
     }
 
     .project-meta {
       display: flex;
       justify-content: space-between;
-      font-size: 0.75rem;
+      gap: 10px;
+      font-size: 0.78rem;
       color: var(--muted);
     }
 
-    /* ---------- FOOTER ---------- */
+    .repos-marquee {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.02);
+      padding: 14px 0;
+    }
+
+    .repos-marquee::before,
+    .repos-marquee::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 80px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .repos-marquee::before {
+      left: 0;
+      background: linear-gradient(to right, var(--card), transparent);
+    }
+
+    .repos-marquee::after {
+      right: 0;
+      background: linear-gradient(to left, var(--card), transparent);
+    }
+
+    .repos-track {
+      display: flex;
+      gap: 14px;
+      width: max-content;
+      animation: marquee 42s linear infinite;
+      padding: 0 12px;
+    }
+
+    .repos-marquee:hover .repos-track {
+      animation-play-state: paused;
+    }
+
+    .repo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      background: rgba(56, 189, 248, 0.08);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.2s ease;
+    }
+
+    .repo-pill:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      background: rgba(56, 189, 248, 0.14);
+    }
+
+    .repo-lang {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
 
     footer {
-      margin-top: 110px;
+      margin-top: 100px;
       text-align: center;
       color: var(--muted);
-      font-size: 0.85rem;
+      font-size: 0.86rem;
     }
-
-    /* ---------- ANIMATIONS ---------- */
 
     [data-animate] {
       opacity: 0;
@@ -424,7 +569,10 @@
       transform: translateY(0);
     }
 
-    /* ---------- PRINT / PDF ---------- */
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
 
     @media print {
       body {
@@ -434,36 +582,58 @@
 
       .topbar,
       .controls,
-      .lang-toggle,
-      .theme-toggle,
       .pdf-btn,
-      footer { display: none !important; }
+      footer {
+        display: none !important;
+      }
 
       .card,
       .profile,
-      .project-card {
+      .project-card,
+      .quick-item,
+      .stack-block {
         box-shadow: none !important;
         border-color: #cbd5e1 !important;
       }
 
-      section { margin-bottom: 48px; }
+      section {
+        margin-bottom: 40px;
+      }
     }
 
-    /* ---------- MOBILE ---------- */
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
 
-    @media (max-width: 820px) {
-      .job { grid-template-columns: 1fr; }
-      .hero { grid-template-columns: 1fr; text-align: center; }
-      .avatar-frame { margin: 0 auto; }
-      .contacts { justify-content: center; }
-      .topbar { flex-direction: column; gap: 16px; }
+      .avatar-frame {
+        margin: 0 auto;
+      }
+
+      .hero-badges,
+      .contacts {
+        justify-content: center;
+      }
+
+      .job {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .controls {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body data-theme="dark">
   <div class="container">
 
-    <!-- TOPBAR -->
     <div class="topbar" data-animate>
       <div class="logo">Dimash.dev</div>
       <div class="controls">
@@ -474,139 +644,414 @@
       </div>
     </div>
 
-    <!-- HERO -->
     <header data-animate>
       <div class="hero">
-        <!-- PHOTO FRAME -->
         <div class="avatar-frame">
           <img src="IMG_3698.jpeg" alt="Dimash Janibekov" class="avatar" />
         </div>
 
         <div>
           <h1 data-ru="Димаш Джанибеков" data-en="Dimash Janibekov">Димаш Джанибеков</h1>
-          <div class="subtitle" data-ru="Automation / Backend Engineer · Python · API · Infrastructure" data-en="Automation / Backend Engineer · Python · API · Infrastructure">
-            Automation / Backend Engineer · Python · API · Infrastructure
+
+          <div
+            class="subtitle"
+            data-ru="Python Backend / Automation Engineer · API · Linux · Infrastructure · Integrations"
+            data-en="Python Backend / Automation Engineer · API · Linux · Infrastructure · Integrations"
+          >
+            Python Backend / Automation Engineer · API · Linux · Infrastructure · Integrations
           </div>
+
+          <div class="hero-badges">
+            <span class="hero-badge" data-ru="Backend" data-en="Backend">Backend</span>
+            <span class="hero-badge" data-ru="Автоматизация" data-en="Automation">Автоматизация</span>
+            <span class="hero-badge" data-ru="Linux / Infra" data-en="Linux / Infra">Linux / Infra</span>
+            <span class="hero-badge" data-ru="CRM / Helpdesk" data-en="CRM / Helpdesk">CRM / Helpdesk</span>
+            <span class="hero-badge" data-ru="DevSecOps growth" data-en="DevSecOps growth">DevSecOps growth</span>
+          </div>
+
           <div class="contacts">
             <span>📍 <span data-ru="Санкт-Петербург" data-en="Saint Petersburg">Санкт-Петербург</span></span>
             <span>📧 <a href="mailto:dizzyod.z7@gmail.com">dizzyod.z7@gmail.com</a></span>
             <span>📱 +7 (999) 521-28-81</span>
-            <span>💬 <a href="https://t.me/dizzypupa" target="_blank">@dizzypupa</a></span>
-            <span>🐙 <a href="https://github.com/DizzyZ7" target="_blank">github.com/DizzyZ7</a></span>
+            <span>💬 <a href="https://t.me/dizzypupa" target="_blank" rel="noopener noreferrer">@dizzypupa</a></span>
+            <span>🐙 <a href="https://github.com/DizzyZ7" target="_blank" rel="noopener noreferrer">github.com/DizzyZ7</a></span>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- PROFILE -->
+    <section data-animate>
+      <div class="quick-grid">
+        <div class="quick-item">
+          <div class="k" data-ru="Роль" data-en="Role">Роль</div>
+          <div class="v" data-ru="Python Backend / Automation Engineer" data-en="Python Backend / Automation Engineer">
+            Python Backend / Automation Engineer
+          </div>
+        </div>
+        <div class="quick-item">
+          <div class="k" data-ru="Опыт" data-en="Experience">Опыт</div>
+          <div class="v" data-ru="3+ года" data-en="3+ years">3+ года</div>
+        </div>
+        <div class="quick-item">
+          <div class="k" data-ru="Формат" data-en="Format">Формат</div>
+          <div class="v" data-ru="Удалённо / гибрид / офис" data-en="Remote / hybrid / on-site">
+            Удалённо / гибрид / офис
+          </div>
+        </div>
+        <div class="quick-item">
+          <div class="k" data-ru="Фокус" data-en="Focus">Фокус</div>
+          <div class="v" data-ru="Backend, интеграции, эксплуатация" data-en="Backend, integrations, operations">
+            Backend, интеграции, эксплуатация
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="profile" data-animate>
       <h2 class="section-title"><span>🧠</span> <span data-ru="Профиль" data-en="Profile">Профиль</span></h2>
-      <p class="lead" data-ru="Я инженер по автоматизации и backend-разработке, который превращает хаотичные бизнес-процессы в устойчивые системы, API и сервисы, которые работают, масштабируются и не падают ночью." data-en="I am an automation and backend engineer who transforms chaotic business processes into reliable systems, APIs, and services that work, scale, and don’t fail at night.">
-        Я инженер по автоматизации и backend-разработке, который превращает хаотичные бизнес-процессы в устойчивые системы, API и сервисы, которые работают, масштабируются и не падают ночью.
+
+      <p
+        class="lead"
+        data-ru="Технический инженер и Python-разработчик с опытом эксплуатации и поддержки продакшн-инфраструктуры, автоматизации процессов и разработки вспомогательных сервисов."
+        data-en="Technical engineer and Python developer with experience in production infrastructure operations, process automation, and internal service development."
+      >
+        Технический инженер и Python-разработчик с опытом эксплуатации и поддержки продакшн-инфраструктуры, автоматизации процессов и разработки вспомогательных сервисов.
       </p>
-      <p class="lead" data-ru="Работаю с Python, REST API, базами данных и Linux-инфраструктурой. Часто нахожусь на стыке продукта, автоматизации, поддержки и backend." data-en="I work with Python, REST APIs, databases, and Linux infrastructure. I often operate at the intersection of product, automation, support, and backend.">
-        Работаю с Python, REST API, базами данных и Linux-инфраструктурой. Часто нахожусь на стыке продукта, автоматизации, поддержки и backend.
+
+      <p
+        class="lead"
+        data-ru="Работал с Linux-серверами, мониторингом, инцидентами, восстановлением сервисов, API-интеграциями и helpdesk/CRM-экосистемами. Разрабатываю backend-сервисы, скрипты, Telegram-ботов и решения для автоматизации внутренних процессов."
+        data-en="Worked with Linux servers, monitoring, incidents, service recovery, API integrations, and helpdesk/CRM ecosystems. I build backend services, scripts, Telegram bots, and automation solutions for internal processes."
+      >
+        Работал с Linux-серверами, мониторингом, инцидентами, восстановлением сервисов, API-интеграциями и helpdesk/CRM-экосистемами. Разрабатываю backend-сервисы, скрипты, Telegram-ботов и решения для автоматизации внутренних процессов.
       </p>
-      <blockquote data-ru="Если процесс можно автоматизировать — его нужно автоматизировать. Если систему можно упростить — её нужно упростить. Если сервис можно сделать устойчивее — его нужно сделать устойчивее." data-en="If a process can be automated — it should be. If a system can be simplified — it should be. If a service can be made more reliable — it should be.">
-        Если процесс можно автоматизировать — его нужно автоматизировать. Если систему можно упростить — её нужно упростить. Если сервис можно сделать устойчивее — его нужно сделать устойчивее.
+
+      <p
+        class="lead"
+        data-ru="Развиваюсь в направлении DevSecOps и прикладной кибербезопасности, с упором на надёжность сервисов, эксплуатацию и безопасность инфраструктуры."
+        data-en="I’m growing toward DevSecOps and applied cybersecurity, with a focus on service reliability, operations, and infrastructure security."
+      >
+        Развиваюсь в направлении DevSecOps и прикладной кибербезопасности, с упором на надёжность сервисов, эксплуатацию и безопасность инфраструктуры.
+      </p>
+
+      <blockquote
+        data-ru="Автоматизировать всё, что можно автоматизировать. Упрощать всё, что можно упростить. Делать инфраструктуру стабильнее, чем она была вчера."
+        data-en="Automate everything that can be automated. Simplify everything that can be simplified. Make infrastructure more reliable than it was yesterday."
+      >
+        Автоматизировать всё, что можно автоматизировать. Упрощать всё, что можно упростить. Делать инфраструктуру стабильнее, чем она была вчера.
       </blockquote>
     </section>
 
-    <!-- STACK -->
     <section data-animate>
-      <h2 class="section-title"><span>⚙️</span> <span data-ru="Основной стек" data-en="Core Stack">Основной стек</span></h2>
-      <div class="card stack">
+      <h2 class="section-title"><span>⚙️</span> <span data-ru="Технологический стек" data-en="Technology Stack">Технологический стек</span></h2>
+
+      <div class="stack">
         <div class="stack-block">
-          <h4 data-ru="Backend & Языки" data-en="Backend & Languages">Backend & Языки</h4>
-          <p>Python · FastAPI · REST API · Async IO</p>
+          <h4 data-ru="Языки и разработка" data-en="Languages & Development">Языки и разработка</h4>
+          <p>Python · PHP (Yii2) · SQL · Node.js · JavaScript · Electron · REST API · JSON API · XML</p>
         </div>
+
         <div class="stack-block">
-          <h4 data-ru="Данные & Инфраструктура" data-en="Data & Infrastructure">Данные & Инфраструктура</h4>
-          <p>PostgreSQL · SQL · Docker · Linux · Git · CI/CD</p>
+          <h4 data-ru="Backend и сервисы" data-en="Backend & Services">Backend и сервисы</h4>
+          <p>Backend services · API design · Telegram Bot API · Yandex Forms API · data processing · automation scripts</p>
         </div>
+
         <div class="stack-block">
-          <h4 data-ru="Интеграции & Автоматизация" data-en="Integrations & Automation">Интеграции & Автоматизация</h4>
-          <p>CRM · Mindbox · Helpdesk · Telegram Bots · Webhooks · HTTPS</p>
+          <h4 data-ru="Инфраструктура и DevOps" data-en="Infrastructure & DevOps">Инфраструктура и DevOps</h4>
+          <p>Linux · Docker · Nginx · Git · Bitbucket · GitHub Actions · CI/CD · production infrastructure · configs</p>
         </div>
+
         <div class="stack-block">
-          <h4 data-ru="Инженерная практика" data-en="Engineering Practices">Инженерная практика</h4>
-          <p>Logging · Monitoring · Refactoring · Production Support · Documentation · API Design</p>
+          <h4 data-ru="Мониторинг и эксплуатация" data-en="Monitoring & Operations">Мониторинг и эксплуатация</h4>
+          <p>Monitoring · alerting · Grafana · Kibana · logging · RCA · incident response · service recovery · SLA</p>
+        </div>
+
+        <div class="stack-block">
+          <h4 data-ru="Интеграции и системы" data-en="Integrations & Systems">Интеграции и системы</h4>
+          <p>CRM integrations · Usedesk (L2–L3) · Mindbox · LoyaltyPlant · RocketData · Pointer · SMS gateways · 1C · Jira · Confluence</p>
+        </div>
+
+        <div class="stack-block">
+          <h4 data-ru="Автоматизация процессов" data-en="Process Automation">Автоматизация процессов</h4>
+          <p>Business process automation · support automation · API integrations · reporting · internal tooling</p>
+        </div>
+
+        <div class="stack-block">
+          <h4 data-ru="Сети и безопасность" data-en="Networks & Security">Сети и безопасность</h4>
+          <p>TCP/IP · HTTP · server security · access control · DevSecOps basics · information security basics</p>
+        </div>
+
+        <div class="stack-block">
+          <h4 data-ru="Хостинг и инфраструктура" data-en="Hosting & Infrastructure">Хостинг и инфраструктура</h4>
+          <p>Timeweb (VPS) · cloud/server infrastructure · deployment · service support</p>
+        </div>
+
+        <div class="stack-block">
+          <h4 data-ru="Документация и процессы" data-en="Documentation & Processes">Документация и процессы</h4>
+          <p>Technical documentation · architecture notes · requirements work · support processes · knowledge transfer</p>
+        </div>
+
+        <div class="stack-block">
+          <h4 data-ru="Engineering Practices" data-en="Engineering Practices">Engineering Practices</h4>
+          <p>Refactoring · code review · production debugging · incident response · service reliability</p>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section data-animate>
       <h2 class="section-title"><span>🚀</span> <span data-ru="Опыт работы" data-en="Experience">Опыт работы</span></h2>
+
       <div class="timeline">
 
-        <!-- MedClick -->
         <div class="card job">
           <div class="job-meta">
             <strong>MedClick</strong>
-            <span data-ru="Технический специалист" data-en="Technical Specialist">Технический специалист</span>
-            <br>
+            <div class="job-role" data-ru="Tech Lead" data-en="Tech Lead">Tech Lead</div>
             <span data-ru="Октябрь 2025 — Январь 2026" data-en="October 2025 — January 2026">Октябрь 2025 — Январь 2026</span>
           </div>
+
           <div class="job-body">
             <ul>
-              <li data-ru="Поддержка и развитие онлайн-платформы компании" data-en="Support and development of the company’s online platform">Поддержка и развитие онлайн-платформы компании</li>
-              <li data-ru="Разработка backend-функциональности, интеграций, SQL-запросов" data-en="Development of backend features, integrations, and SQL queries">Разработка backend-функциональности, интеграций, SQL-запросов</li>
-              <li data-ru="Интеграция CRM и helpdesk" data-en="CRM and helpdesk integrations (Mindbox, Usedesk)">Интеграция CRM и helpdesk</li>
-              <li data-ru="Разработка Telegram-ботов для автоматизации процессов" data-en="Development of Telegram bots for process automation">Разработка Telegram-ботов для автоматизации процессов</li>
-              <li data-ru="Автоматизация выплат, уведомлений и отчётности" data-en="Automation of payouts, notifications, and reporting">Автоматизация выплат, уведомлений и отчётности</li>
-              <li data-ru="Мониторинг и восстановление сервисов (Timeweb)" data-en="Monitoring and recovery of services (Timeweb)">Мониторинг и восстановление сервисов (Timeweb)</li>
-              <li data-ru="Повышение отказоустойчивости инфраструктуры" data-en="Improving infrastructure reliability">Повышение отказоустойчивости инфраструктуры</li>
-              <li data-ru="Ведение технической документации и координация задач разработчиков" data-en="Maintaining technical documentation and coordinating developer tasks">Ведение технической документации и координация задач разработчиков</li>
+              <li
+                data-ru="Поддержка и развитие онлайн-платформы компании: стабильность, исправление ошибок и планирование улучшений."
+                data-en="Supported and developed the company platform: stability, bug fixing, and improvement planning."
+              >
+                Поддержка и развитие онлайн-платформы компании: стабильность, исправление ошибок и планирование улучшений.
+              </li>
+              <li
+                data-ru="Разработка и доработка backend-функциональности, интеграций и SQL-логики."
+                data-en="Developed and improved backend functionality, integrations, and SQL logic."
+              >
+                Разработка и доработка backend-функциональности, интеграций и SQL-логики.
+              </li>
+              <li
+                data-ru="Настройка и сопровождение CRM- и helpdesk-интеграций."
+                data-en="Configured and maintained CRM and helpdesk integrations."
+              >
+                Настройка и сопровождение CRM- и helpdesk-интеграций.
+              </li>
+              <li
+                data-ru="Разработка и поддержка Telegram-ботов для автоматизации процессов."
+                data-en="Built and maintained Telegram bots for process automation."
+              >
+                Разработка и поддержка Telegram-ботов для автоматизации процессов.
+              </li>
+              <li
+                data-ru="Автоматизация маркетинговых и операционных сценариев: выплаты, уведомления, отчёты."
+                data-en="Automated marketing and operational scenarios: payouts, notifications, and reporting."
+              >
+                Автоматизация маркетинговых и операционных сценариев: выплаты, уведомления, отчёты.
+              </li>
+              <li
+                data-ru="Участие в эксплуатации серверов: мониторинг, диагностика и восстановление сервисов."
+                data-en="Participated in server operations: monitoring, diagnostics, and service recovery."
+              >
+                Участие в эксплуатации серверов: мониторинг, диагностика и восстановление сервисов.
+              </li>
+              <li
+                data-ru="Повышение отказоустойчивости и снижение количества инцидентов."
+                data-en="Improved reliability and reduced the number of incidents."
+              >
+                Повышение отказоустойчивости и снижение количества инцидентов.
+              </li>
+              <li
+                data-ru="Ведение технической документации и координация задач разработчиков."
+                data-en="Maintained technical documentation and coordinated developer tasks."
+              >
+                Ведение технической документации и координация задач разработчиков.
+              </li>
             </ul>
+
             <div class="tags">
-              <span class="tag">Python</span><span class="tag">Backend</span><span class="tag">Automation</span><span class="tag">CRM</span><span class="tag">Telegram</span><span class="tag">Infrastructure</span>
+              <span class="tag">Python</span>
+              <span class="tag">PHP / Yii2</span>
+              <span class="tag">SQL</span>
+              <span class="tag">REST API</span>
+              <span class="tag">Bitbucket</span>
+              <span class="tag">Timeweb</span>
+              <span class="tag">Telegram Bot API</span>
             </div>
           </div>
         </div>
 
-        <!-- Profit&HoReCa -->
         <div class="card job">
           <div class="job-meta">
-            <strong>ООО «ПРОФИТЭНДХОРЕКА»</strong>
-            <span data-ru="Оператор по работе с дисконтными картами" data-en="Discount Card Operations Specialist">Оператор по работе с дисконтными картами</span>
-            <br>
-            <span data-ru="Июнь 2025 — Октябрь 2025" data-en="June 2025 — October 2025">Июнь 2025 — Октябрь 2025</span>
+            <strong data-ru="ООО «ПРОФИТЭНДХОРЕКА»" data-en="PROFITENDHORECA LLC">ООО «ПРОФИТЭНДХОРЕКА»</strong>
+            <div class="job-role" data-ru="Инженер автоматизации" data-en="Automation Engineer">Инженер автоматизации</div>
+            <span data-ru="Ноябрь 2023 — Октябрь 2025" data-en="November 2023 — October 2025">Ноябрь 2023 — Октябрь 2025</span>
           </div>
+
           <div class="job-body">
+            <p
+              data-ru="5 сетей ресторанов: ТОКИО-CITY, BAHROMA, VILLA VERDE, CRISTAL, Городские кондитерские №1."
+              data-en="5 restaurant chains: TOKIO-CITY, BAHROMA, VILLA VERDE, CRISTAL, Gorodskie Konditerskie No.1."
+            >
+              5 сетей ресторанов: ТОКИО-CITY, BAHROMA, VILLA VERDE, CRISTAL, Городские кондитерские №1.
+            </p>
+
             <ul>
-              <li data-ru="Поддержка и развитие внутренних коммуникационных систем" data-en="Support and development of internal communication systems">Поддержка и развитие внутренних коммуникационных систем</li>
-              <li data-ru="Администрирование Usedesk, Mindbox, Telegram-ботов, Yandex Forms" data-en="Administration of Usedesk, Mindbox, Telegram bots, and Yandex Forms">Администрирование Usedesk, Mindbox, Telegram-ботов, Yandex Forms</li>
-              <li data-ru="Настройка API-интеграций между CRM, helpdesk и внутренними сервисами" data-en="Setup of API integrations between CRM, helpdesk, and internal services">Настройка API-интеграций между CRM, helpdesk и внутренними сервисами</li>
-              <li data-ru="Автоматизация обработки обращений и бизнес-процессов" data-en="Automation of request handling and business processes">Автоматизация обработки обращений и бизнес-процессов</li>
-              <li data-ru="Разработка Python-скриптов и сервисов для оптимизации рутины" data-en="Development of Python scripts and services to optimize routine tasks">Разработка Python-скриптов и сервисов для оптимизации рутины</li>
-              <li data-ru="Анализ и сопровождение чужого кода, понимание полного цикла IT-систем" data-en="Analysis and maintenance of external codebases, understanding full IT system lifecycle">Анализ и сопровождение чужого кода, понимание полного цикла IT-систем</li>
+              <li
+                data-ru="Поддержка и развитие внутренних и клиентских IT-систем ресторанных сетей."
+                data-en="Supported and developed internal and customer-facing IT systems for restaurant chains."
+              >
+                Поддержка и развитие внутренних и клиентских IT-систем ресторанных сетей.
+              </li>
+              <li
+                data-ru="Администрирование и развитие экосистемы сервисов: Usedesk, Mindbox, LoyaltyPlant, CRM, 1C, Telegram-боты, Yandex Forms, SMS-центры."
+                data-en="Administered and developed the service ecosystem: Usedesk, Mindbox, LoyaltyPlant, CRM, 1C, Telegram bots, Yandex Forms, SMS gateways."
+              >
+                Администрирование и развитие экосистемы сервисов: Usedesk, Mindbox, LoyaltyPlant, CRM, 1C, Telegram-боты, Yandex Forms, SMS-центры.
+              </li>
+              <li
+                data-ru="Настройка бизнес-логики и правил автоматизации в Usedesk: триггеры, маршрутизация, SLA, статусы, кастомные поля."
+                data-en="Configured business logic and automation rules in Usedesk: triggers, routing, SLA, statuses, and custom fields."
+              >
+                Настройка бизнес-логики и правил автоматизации в Usedesk: триггеры, маршрутизация, SLA, статусы, кастомные поля.
+              </li>
+              <li
+                data-ru="Проектирование и реализация API-интеграций между CRM, Mindbox, helpdesk-системами и внутренними сервисами."
+                data-en="Designed and implemented API integrations between CRM, Mindbox, helpdesk systems, and internal services."
+              >
+                Проектирование и реализация API-интеграций между CRM, Mindbox, helpdesk-системами и внутренними сервисами.
+              </li>
+              <li
+                data-ru="Поддержка клиентских и бонусных систем, работа с программами лояльности."
+                data-en="Supported customer and loyalty systems and worked with loyalty programs."
+              >
+                Поддержка клиентских и бонусных систем, работа с программами лояльности.
+              </li>
+              <li
+                data-ru="Автоматизация обработки обращений и внутренних бизнес-процессов."
+                data-en="Automated request handling and internal business processes."
+              >
+                Автоматизация обработки обращений и внутренних бизнес-процессов.
+              </li>
+              <li
+                data-ru="Разработка сервисов, скриптов и чат-ботов на Python для оптимизации рутинных операций."
+                data-en="Built Python services, scripts, and chatbots to optimize routine operations."
+              >
+                Разработка сервисов, скриптов и чат-ботов на Python для оптимизации рутинных операций.
+              </li>
+              <li
+                data-ru="Анализ сбоев, восстановление аккаунтов, ручная и автоматизированная обработка данных."
+                data-en="Performed incident analysis, account recovery, and manual/automated data processing."
+              >
+                Анализ сбоев, восстановление аккаунтов, ручная и автоматизированная обработка данных.
+              </li>
+              <li
+                data-ru="Поддержка и анализ чужого кода, участие в полном цикле сопровождения IT-систем."
+                data-en="Supported and analyzed external codebases and participated in the full IT system lifecycle."
+              >
+                Поддержка и анализ чужого кода, участие в полном цикле сопровождения IT-систем.
+              </li>
+              <li
+                data-ru="Поддержка геосервисов и карточек RocketData и Pointer."
+                data-en="Supported geo-services and listings via RocketData and Pointer."
+              >
+                Поддержка геосервисов и карточек RocketData и Pointer.
+              </li>
+              <li
+                data-ru="Создание и администрирование Yandex Forms с интеграциями в helpdesk для тикетов."
+                data-en="Created and administered Yandex Forms integrated with helpdesk ticketing."
+              >
+                Создание и администрирование Yandex Forms с интеграциями в helpdesk для тикетов.
+              </li>
             </ul>
+
             <div class="tags">
-              <span class="tag">Python</span><span class="tag">API</span><span class="tag">Automation</span><span class="tag">CRM</span><span class="tag">Integrations</span>
+              <span class="tag">Python</span>
+              <span class="tag">PHP</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Mindbox</span>
+              <span class="tag">Usedesk</span>
+              <span class="tag">LoyaltyPlant</span>
+              <span class="tag">Grafana</span>
+              <span class="tag">Kibana</span>
             </div>
           </div>
         </div>
 
-        <!-- IE Yur -->
         <div class="card job">
           <div class="job-meta">
-            <strong>ИП ЮР Елена Валерьевна</strong>
-            <span data-ru="Менеджер службы клиентской поддержки" data-en="Customer Support Manager">Менеджер службы клиентской поддержки</span>
-            <br>
-            <span data-ru="Ноябрь 2023 — Июнь 2025" data-en="November 2023 — June 2025">Ноябрь 2023 — Июнь 2025</span>
+            <strong data-ru="Техфорвард" data-en="TechForward">Техфорвард</strong>
+            <div class="job-role" data-ru="Python-разработчик" data-en="Python Developer">Python-разработчик</div>
+            <span data-ru="Декабрь 2022 — Ноябрь 2023" data-en="December 2022 — November 2023">Декабрь 2022 — Ноябрь 2023</span>
           </div>
+
           <div class="job-body">
+            <p
+              data-ru="Проект: приложение аналитики трансляций — кроссплатформенное desktop-приложение для генерации статистики и визуализации метрик по стримам."
+              data-en="Project: stream analytics application — a cross-platform desktop app for generating statistics and visualizing stream metrics."
+            >
+              Проект: приложение аналитики трансляций — кроссплатформенное desktop-приложение для генерации статистики и визуализации метрик по стримам.
+            </p>
+
             <ul>
-              <li data-ru="Поддержка клиентских и бонусных систем крупных ресторанных сетей" data-en="Support of customer and loyalty systems for large restaurant chains">Поддержка клиентских и бонусных систем крупных ресторанных сетей</li>
-              <li data-ru="Работа с CRM, Mindbox, LoyaltyPlant, Usedesk, 1C, SMS-центрами" data-en="Work with CRM, Mindbox, LoyaltyPlant, Usedesk, 1C, and SMS gateways">Работа с CRM, Mindbox, LoyaltyPlant, Usedesk, 1C, SMS-центрами</li>
-              <li data-ru="Ручная и автоматизированная обработка данных, восстановление аккаунтов" data-en="Manual and automated data processing, account recovery">Ручная и автоматизированная обработка данных, восстановление аккаунтов</li>
-              <li data-ru="Анализ сбоев и взаимодействие с техническими командами" data-en="Incident analysis and collaboration with technical teams">Анализ сбоев и взаимодействие с техническими командами</li>
-              <li data-ru="Постепенный переход от поддержки к автоматизации процессов" data-en="Gradual transition from support to process automation">Постепенный переход от поддержки к автоматизации процессов</li>
-              <li data-ru="Разработка чат-ботов и внутренних сервисов на Python" data-en="Development of chatbots and internal services in Python">Разработка чат-ботов и внутренних сервисов на Python</li>
+              <li
+                data-ru="Разработка backend-логики сервиса генерации аналитики."
+                data-en="Developed backend logic for the analytics generation service."
+              >
+                Разработка backend-логики сервиса генерации аналитики.
+              </li>
+              <li
+                data-ru="Реализация обработки и агрегации данных по трансляциям."
+                data-en="Implemented processing and aggregation of stream data."
+              >
+                Реализация обработки и агрегации данных по трансляциям.
+              </li>
+              <li
+                data-ru="Проектирование API для получения статистики и аналитических отчётов."
+                data-en="Designed APIs for statistics and analytics reporting."
+              >
+                Проектирование API для получения статистики и аналитических отчётов.
+              </li>
+              <li
+                data-ru="Разработка механизмов генерации отчётов и статистических метрик."
+                data-en="Built reporting and statistical metric generation mechanisms."
+              >
+                Разработка механизмов генерации отчётов и статистических метрик.
+              </li>
+              <li
+                data-ru="Оптимизация обработки данных и производительности приложения."
+                data-en="Optimized data processing and application performance."
+              >
+                Оптимизация обработки данных и производительности приложения.
+              </li>
+              <li
+                data-ru="Реализация кроссплатформенной сборки и подготовка portable-артефактов для Windows, macOS и Linux."
+                data-en="Implemented cross-platform builds and prepared portable artifacts for Windows, macOS, and Linux."
+              >
+                Реализация кроссплатформенной сборки и подготовка portable-артефактов для Windows, macOS и Linux.
+              </li>
+              <li
+                data-ru="Настройка CI/CD сборок через GitHub Actions и автоматической генерации билдов."
+                data-en="Configured CI/CD pipelines via GitHub Actions and automated build generation."
+              >
+                Настройка CI/CD сборок через GitHub Actions и автоматической генерации билдов.
+              </li>
+              <li
+                data-ru="Реализация системы лицензирования и защиты кода, поддержка dev-режима и production-сборок."
+                data-en="Implemented licensing/code protection and supported dev and production builds."
+              >
+                Реализация системы лицензирования и защиты кода, поддержка dev-режима и production-сборок.
+              </li>
+              <li
+                data-ru="Исправление багов и сопровождение релизов."
+                data-en="Fixed bugs and supported releases."
+              >
+                Исправление багов и сопровождение релизов.
+              </li>
             </ul>
+
             <div class="tags">
-              <span class="tag">Python</span><span class="tag">Automation</span><span class="tag">Support Systems</span><span class="tag">CRM</span>
+              <span class="tag">Python 3.8/3.9</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Redis</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Electron</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Nginx</span>
             </div>
           </div>
         </div>
@@ -614,27 +1059,50 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section data-animate>
-      <h2 class="section-title"><span>🛠</span> <span data-ru="Проекты" data-en="Projects">Проекты</span></h2>
+      <h2 class="section-title"><span>🛠</span> <span data-ru="Репозитории и проекты" data-en="Repositories & Projects">Репозитории и проекты</span></h2>
+
+      <div class="card">
+        <h3 style="margin-top:0;" data-ru="Все репозитории" data-en="All repositories">Все репозитории</h3>
+        <div class="repos-marquee">
+          <div class="repos-track" id="repos-track"></div>
+        </div>
+      </div>
+
       <div class="projects-grid" id="projects"></div>
     </section>
 
-    <!-- EDUCATION & LANGUAGES -->
     <section data-animate>
       <h2 class="section-title"><span>🎓</span> <span data-ru="Образование и языки" data-en="Education & Languages">Образование и языки</span></h2>
+
       <div class="grid-2">
         <div class="card">
           <h3 data-ru="Образование" data-en="Education">Образование</h3>
-          <p data-ru="Санкт-Петербургский политехнический университет Петра Великого" data-en="Peter the Great St. Petersburg Polytechnic University">Санкт-Петербургский политехнический университет Петра Великого</p>
-          <p data-ru="Институт компьютерных наук и кибербезопасности" data-en="Institute of Computer Science and Cybersecurity">Институт компьютерных наук и кибербезопасности</p>
-          <p data-ru="Информационные системы и технологии (неоконченное высшее, 2027)" data-en="Information Systems and Technologies (incomplete higher education, 2027)">Информационные системы и технологии (неоконченное высшее, 2027)</p>
+          <p
+            data-ru="Санкт-Петербургский политехнический университет Петра Великого"
+            data-en="Peter the Great St. Petersburg Polytechnic University"
+          >
+            Санкт-Петербургский политехнический университет Петра Великого
+          </p>
+          <p
+            data-ru="Институт компьютерных наук и кибербезопасности"
+            data-en="Institute of Computer Science and Cybersecurity"
+          >
+            Институт компьютерных наук и кибербезопасности
+          </p>
+          <p
+            data-ru="Бакалавр, Информационные системы и технологии, 2025"
+            data-en="Bachelor’s degree, Information Systems and Technologies, 2025"
+          >
+            Бакалавр, Информационные системы и технологии, 2025
+          </p>
         </div>
+
         <div class="card">
           <h3 data-ru="Языки" data-en="Languages">Языки</h3>
           <ul class="list">
             <li data-ru="Русский — родной" data-en="Russian — Native">Русский — родной</li>
-            <li data-ru="Английский — C1 (Advanced)" data-en="English — C1 (Advanced)">Английский — C1 (Advanced)</li>
+            <li data-ru="Английский — C1" data-en="English — C1">Английский — C1</li>
             <li data-ru="Чешский — B2" data-en="Czech — B2">Чешский — B2</li>
             <li data-ru="Немецкий — A2" data-en="German — A2">Немецкий — A2</li>
           </ul>
@@ -642,33 +1110,31 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer data-animate>
-      <span data-ru="Резюме обновлено: 29 января 2026" data-en="Resume updated: January 29, 2026">Резюме обновлено: 29 января 2026</span>
+      <span data-ru="Резюме обновлено: 16 марта 2026" data-en="Resume updated: March 16, 2026">
+        Резюме обновлено: 16 марта 2026
+      </span>
     </footer>
 
   </div>
 
   <script>
-    /* ---------- LANGUAGE SWITCH ---------- */
-
     function setLang(lang) {
       const elements = document.querySelectorAll('[data-ru]');
       elements.forEach(el => {
-        el.textContent = el.dataset[lang];
+        if (el.dataset[lang]) {
+          el.textContent = el.dataset[lang];
+        }
       });
 
       document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-
       document.documentElement.lang = lang;
       localStorage.setItem('lang', lang);
     }
 
     const savedLang = localStorage.getItem('lang');
     if (savedLang) setLang(savedLang);
-
-    /* ---------- THEME SWITCH ---------- */
 
     function toggleTheme() {
       const body = document.body;
@@ -685,16 +1151,12 @@
       document.getElementById('theme-btn').textContent = savedTheme === 'dark' ? '🌙' : '☀️';
     }
 
-    /* ---------- PDF EXPORT ---------- */
-
     function downloadPDF() {
       const originalTitle = document.title;
       document.title = 'Dimash_Janibekov_Resume';
       window.print();
       document.title = originalTitle;
     }
-
-    /* ---------- SCROLL ANIMATIONS ---------- */
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -704,35 +1166,55 @@
 
     document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
 
-    /* ---------- GITHUB PROJECTS AUTO-FETCH ---------- */
-
     async function loadProjects() {
-      const container = document.getElementById('projects');
+      const projectsContainer = document.getElementById('projects');
+      const reposTrack = document.getElementById('repos-track');
+
       try {
-        const res = await fetch('https://api.github.com/users/DizzyZ7/repos');
+        const res = await fetch('https://api.github.com/users/DizzyZ7/repos?per_page=100&sort=updated');
         const repos = await res.json();
 
         const filtered = repos
-          .filter(r => !r.fork)
-          .sort((a, b) => b.stargazers_count - a.stargazers_count)
+          .filter(repo => !repo.fork)
+          .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+        const marqueeItems = filtered.map(repo => `
+          <a class="repo-pill" href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+            <span>${repo.name}</span>
+            <span class="repo-lang">${repo.language || '—'}</span>
+          </a>
+        `).join('');
+
+        reposTrack.innerHTML = marqueeItems + marqueeItems;
+
+        const featured = [...filtered]
+          .sort((a, b) => {
+            if (b.stargazers_count !== a.stargazers_count) {
+              return b.stargazers_count - a.stargazers_count;
+            }
+            return new Date(b.updated_at) - new Date(a.updated_at);
+          })
           .slice(0, 6);
 
-        filtered.forEach(repo => {
+        projectsContainer.innerHTML = '';
+
+        featured.forEach(repo => {
           const card = document.createElement('div');
           card.className = 'project-card';
           card.innerHTML = `
             <div class="project-title">${repo.name}</div>
-            <div class="project-desc">${repo.description || 'No description provided.'}</div>
+            <div class="project-desc">${repo.description || 'Описание пока не добавлено.'}</div>
             <div class="project-meta">
               <span>⭐ ${repo.stargazers_count}</span>
               <span>${repo.language || '—'}</span>
             </div>
           `;
           card.onclick = () => window.open(repo.html_url, '_blank');
-          container.appendChild(card);
+          projectsContainer.appendChild(card);
         });
       } catch (e) {
-        container.innerHTML = '<p style="color: var(--muted)">Failed to load projects.</p>';
+        projectsContainer.innerHTML = '<p style="color: var(--muted)">Не удалось загрузить проекты.</p>';
+        reposTrack.innerHTML = '<span style="color: var(--muted); padding: 0 16px;">Не удалось загрузить репозитории.</span>';
       }
     }
 
