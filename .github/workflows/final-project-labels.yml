@@ -1,0 +1,26 @@
+name: Final project label corrections
+
+on:
+  push:
+    paths:
+      - .github/workflows/final-project-labels.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: python tools/final_project_labels.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/final-project-labels.yml tools/final_project_labels.py
+          git add index.html
+          git commit -m "Correct project names and categories"
+          git push
