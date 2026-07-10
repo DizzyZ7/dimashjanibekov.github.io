@@ -482,3 +482,26 @@ footer { border-top: 1px solid var(--border-soft); }
   .reveal { opacity: 1; transform: none; }
   .projects-grid { grid-template-columns: 1fr 1fr; }
 }
+
+
+/* Engineering profile */
+.expertise-section { background: linear-gradient(180deg, #fff 0%, var(--bg-warm) 100%); }
+.expertise-link { color: var(--purple); font-weight: 500; text-decoration: none; }
+.expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.expertise-card { position: relative; min-height: 225px; padding: 22px; overflow: hidden; border: 1px solid var(--border-soft); border-radius: 16px; background: rgba(255,255,255,.92); box-shadow: var(--shadow-sm); transition: transform .18s, border-color .18s, box-shadow .18s; }
+.expertise-card:hover { transform: translateY(-2px); border-color: var(--border); box-shadow: var(--shadow-md); }
+.expertise-index { display: inline-flex; margin-bottom: 28px; color: var(--purple); font-family: "EB Garamond", serif; font-size: 22px; line-height: 1; }
+.expertise-card h3 { margin-bottom: 8px; font-size: 14px; font-weight: 600; }
+.expertise-card p { margin-bottom: 16px; color: var(--text-2); font-size: 12px; line-height: 1.58; }
+.expertise-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+.expertise-tags span { padding: 4px 8px; border-radius: 6px; background: var(--bg-soft); color: var(--text-3); font-size: 9.8px; }
+.stack-groups { grid-template-columns: repeat(3, 1fr); }
+.stack-group { min-height: 185px; }
+.stack-group.stack-primary { border-color: #cbc6ef; background: linear-gradient(145deg, #fff 0%, #f4f2ff 100%); }
+.stack-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 4px; }
+.stack-head h3 { margin-bottom: 0; }
+.stack-head > span { padding: 3px 7px; border-radius: 999px; background: var(--purple-bg); color: var(--purple); font-size: 8.5px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; }
+.stack-group > p { min-height: 34px; margin-bottom: 12px; color: var(--text-3); font-size: 10.5px; line-height: 1.45; }
+@media (max-width: 980px) { .expertise-grid { grid-template-columns: repeat(2, 1fr); } .stack-groups { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 720px) { .expertise-grid { grid-template-columns: 1fr; } .expertise-card { min-height: 0; } .stack-groups { grid-template-columns: 1fr; } .stack-group { min-height: 0; } }
+@media print { .expertise-card { box-shadow: none; break-inside: avoid; } }
