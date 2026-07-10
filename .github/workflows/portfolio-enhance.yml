@@ -1,0 +1,28 @@
+name: Apply portfolio enhancement
+
+on:
+  push:
+    paths:
+      - .github/workflows/portfolio-enhance.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch-portfolio:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Patch static source
+        run: python tools/patch_portfolio.py
+      - name: Commit static update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/portfolio-enhance.yml tools/patch_portfolio.py
+          git add index.html styles.css
+          git commit -m "Make engineering positioning static"
+          git push
