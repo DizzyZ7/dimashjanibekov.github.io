@@ -28,8 +28,9 @@ const english = {
   'paths.business.text': 'Bots, CRM/API integrations, backend services, internal tools and AI/RAG — from process mapping and architecture to launch and support.',
   'paths.business.link': 'view services →',
   'stats.years': 'years of commercial experience',
-  'stats.lead': 'technical leadership experience',
+  'stats.chains': 'restaurant chains supported in production',
   'stats.repos': 'public repositories and systems',
+  'stats.award': 'place in an engineering case championship',
   'expertise.kicker': 'engineering profile',
   'expertise.title': 'I do more than write code — I design the complete system boundary',
   'expertise.desc': 'I can own a backend module, an integration layer or the whole technical cycle: from data model and API to deployment, observability and secure operation.',
@@ -57,6 +58,15 @@ const english = {
   'case.solution': 'solution',
   'case.value': 'value',
   'project.repo': 'repository ↗',
+  'ownership.label': 'my scope',
+  'ownership.stormrelay': 'architecture · backend · infrastructure · security',
+  'ownership.signalbox': 'architecture · backend · delivery reliability',
+  'ownership.verdictmesh': 'architecture · backend · risk engine',
+  'ownership.aimemo': 'product architecture · full-stack implementation',
+  'ownership.voice': 'architecture · backend · edge integration',
+  'ownership.telco': 'architecture · backend · telemetry',
+  'ownership.homeledger': 'full-stack implementation · self-hosted deployment',
+  'ownership.ryadom': 'architecture · backend · moderation flows',
   'project.stormrelay.sub': 'Event correlation and incident-response control plane',
   'project.stormrelay.problem': 'Alerts from different sources are duplicated, lose context and require manual correlation.',
   'project.stormrelay.solution': 'CloudEvents-compatible ingestion, deduplication, incident lifecycle, policies, durable runbooks, RBAC/OIDC and audit history.',
@@ -114,6 +124,18 @@ const english = {
   'job.techforward.text': 'Backend logic for a cross-platform broadcast analytics application: statistics processing, aggregation and delivery.',
   'job.techforward.1': 'Designed APIs for analytical reports and helped integrate them with a desktop client.',
   'job.techforward.2': 'Fixed defects, optimized data processing and maintained working builds.',
+  'proof.kicker': 'evidence',
+  'proof.title': 'Credibility without inflated claims',
+  'proof.desc': 'Concrete facts that add context to the experience and projects above.',
+  'proof.production.value': '5 chains',
+  'proof.production.title': 'Production integrations',
+  'proof.production.text': 'Integration and automation work for TOKYO-CITY, BAHROMA, VILLA VERDE, CRISTAL and City Confectioneries No. 1.',
+  'proof.award.value': '1st place',
+  'proof.award.title': 'Engineering case championship',
+  'proof.award.text': 'Peter the Great Engineering Case Championship: an industrial offline speech recognition and synthesis concept.',
+  'proof.education.value': '2027',
+  'proof.education.title': 'Information Systems and Technologies',
+  'proof.education.text': 'Peter the Great St. Petersburg Polytechnic University, expected bachelor graduation.',
   'services.kicker': 'for businesses',
   'services.title': 'What I can deliver end to end',
   'services.desc': 'Solutions for processes where requests get lost, data is copied manually and teams repeat the same actions.',
@@ -173,9 +195,97 @@ const english = {
   'cta.title': 'Need an engineer for your team or a system that replaces manual routine?',
   'cta.text': 'For a role, we can discuss the team and technical scope. For a project, we will map the process, choose a sensible format and define the first deliverable.',
   'cta.write': 'message @dizzy_dev',
+  'cta.email': 'email',
   'cta.github': 'open GitHub',
   'footer.resume': 'PDF resume'
 };
+
+const ownership = {
+  'StormRelay': ['ownership.stormrelay', 'архитектура · backend · infrastructure · безопасность'],
+  'SignalBox': ['ownership.signalbox', 'архитектура · backend · надежность доставки'],
+  'VerdictMesh': ['ownership.verdictmesh', 'архитектура · backend · risk engine'],
+  'AI Memo': ['ownership.aimemo', 'архитектура продукта · fullstack-реализация'],
+  'Автономная голосовая система оповещений': ['ownership.voice', 'архитектура · backend · edge-интеграция'],
+  'TelcoNet Guardian': ['ownership.telco', 'архитектура · backend · телеметрия'],
+  'HomeLedger': ['ownership.homeledger', 'fullstack-реализация · self-hosted deployment'],
+  'Ryadom Bot': ['ownership.ryadom', 'архитектура · backend · модерационные сценарии']
+};
+
+function enhancePortfolio() {
+  const stats = document.querySelector('.stats-row');
+  if (stats) {
+    stats.innerHTML = `
+      <div class="stat"><div class="stat-num">3+</div><div class="stat-label" data-i18n="stats.years">года коммерческого опыта</div></div>
+      <div class="stat"><div class="stat-num">5</div><div class="stat-label" data-i18n="stats.chains">ресторанных сетей в production</div></div>
+      <div class="stat"><div class="stat-num">60+</div><div class="stat-label" data-i18n="stats.repos">публичных репозиториев и систем</div></div>
+      <div class="stat"><div class="stat-num">1 место</div><div class="stat-label" data-i18n="stats.award">в инженерном кейс-чемпионате</div></div>`;
+  }
+
+  document.querySelectorAll('.project-card').forEach((card) => {
+    const title = card.querySelector('.project-title')?.textContent.trim();
+    const config = ownership[title];
+    const subtitle = card.querySelector('.project-sub');
+    if (!config || !subtitle || card.querySelector('.project-ownership')) return;
+
+    const row = document.createElement('div');
+    row.className = 'project-ownership';
+    row.innerHTML = `<span class="ownership-label" data-i18n="ownership.label">моя зона</span><span data-i18n="${config[0]}">${config[1]}</span>`;
+    subtitle.insertAdjacentElement('afterend', row);
+  });
+
+  const experience = document.querySelector('#experience');
+  if (experience && !document.querySelector('#proof')) {
+    experience.insertAdjacentHTML('afterend', `
+      <section class="section proof-section" id="proof">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="section-kicker" data-i18n="proof.kicker">подтверждения</span>
+              <h2 class="section-title" data-i18n="proof.title">Факты вместо завышенных формулировок</h2>
+              <p class="section-desc" data-i18n="proof.desc">Три конкретных подтверждения масштаба, инженерного мышления и профильной базы.</p>
+            </div>
+          </div>
+          <div class="proof-grid reveal">
+            <article class="proof-card">
+              <div class="proof-value" data-i18n="proof.production.value">5 сетей</div>
+              <h3 data-i18n="proof.production.title">Интеграции в production</h3>
+              <p data-i18n="proof.production.text">Работа с процессами ТОКИО-CITY, BAHROMA, VILLA VERDE, CRISTAL и «Городских кондитерских №1».</p>
+            </article>
+            <article class="proof-card">
+              <div class="proof-value" data-i18n="proof.award.value">1 место</div>
+              <h3 data-i18n="proof.award.title">Инженерный кейс-чемпионат</h3>
+              <p data-i18n="proof.award.text">Peter the Great Engineering Case Championship: концепция промышленной offline-системы распознавания и синтеза речи.</p>
+            </article>
+            <article class="proof-card">
+              <div class="proof-value" data-i18n="proof.education.value">2027</div>
+              <h3 data-i18n="proof.education.title">Информационные системы и технологии</h3>
+              <p data-i18n="proof.education.text">Санкт-Петербургский политехнический университет Петра Великого, ожидаемое окончание бакалавриата.</p>
+            </article>
+          </div>
+        </div>
+      </section>`);
+  }
+
+  const ctaActions = document.querySelector('.cta-actions');
+  if (ctaActions && !ctaActions.querySelector('[href^="mailto:"]')) {
+    const email = document.createElement('a');
+    email.className = 'btn btn-secondary';
+    email.href = 'mailto:dizzyod.z7@gmail.com';
+    email.dataset.i18n = 'cta.email';
+    email.textContent = 'email';
+    ctaActions.insertBefore(email, ctaActions.lastElementChild);
+  }
+
+  const footerLinks = document.querySelector('.footer-links');
+  if (footerLinks && !footerLinks.querySelector('[href^="mailto:"]')) {
+    const email = document.createElement('a');
+    email.href = 'mailto:dizzyod.z7@gmail.com';
+    email.textContent = 'Email';
+    footerLinks.insertBefore(email, footerLinks.lastElementChild);
+  }
+}
+
+enhancePortfolio();
 
 const russianText = new Map();
 const russianHtml = new Map();
