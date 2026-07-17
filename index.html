@@ -6,54 +6,52 @@
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#ffffff">
   <meta name="robots" content="index,follow">
-  <title>Димаш Джанибеков — Backend / Fullstack / Automation Engineer</title>
-  <meta name="description" content="Backend и fullstack-разработка, архитектура API, интеграции, автоматизация, инфраструктура, безопасность и AI/RAG. Открыт к работе в сильной команде и проектному сотрудничеству.">
-  <link rel="canonical" href="https://dimashjanibekov.github.io/">
+  <title>Димаш Джанибеков — Python Backend / Integration Engineer</title>
+  <meta name="description" content="Backend и fullstack-разработка, архитектура API, интеграции, автоматизация, инфраструктура, безопасность и AI/RAG.">
+  <link rel="canonical" href="https://dizzyz7.github.io/dimashjanibekov.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
-  <meta property="og:title" content="Димаш Джанибеков — Backend / Fullstack / Automation Engineer">
-  <meta property="og:description" content="Проектирую и запускаю backend-сервисы, интеграции, очереди, внутренние инструменты, AI/RAG-системы и production-инфраструктуру.">
-  <meta property="og:url" content="https://dimashjanibekov.github.io/">
+  <meta property="og:title" content="Димаш Джанибеков — Python Backend / Integration Engineer">
+  <meta property="og:description" content="Backend и fullstack-разработка, архитектура API, интеграции, автоматизация, инфраструктура, безопасность и AI/RAG.">
+  <meta property="og:url" content="https://dizzyz7.github.io/dimashjanibekov.github.io/">
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/99655528?v=4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="i18n.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Димаш Джанибеков",
     "alternateName": "DizZy",
-    "url": "https://dimashjanibekov.github.io/",
+    "url": "https://dizzyz7.github.io/dimashjanibekov.github.io/",
     "image": "https://avatars.githubusercontent.com/u/99655528?v=4",
-    "jobTitle": "Backend / Fullstack / Automation Engineer",
-    "sameAs": [
-      "https://github.com/DizzyZ7",
-      "https://t.me/dizzy_dev"
-    ],
-    "knowsAbout": [
-      "Python", "FastAPI", "Django", "PostgreSQL", "Redis", "Docker",
-      "REST API", "CRM integrations", "Telegram bots", "RAG", "Cybersecurity"
-    ]
+    "jobTitle": "Python Backend / Integration Engineer",
+    "sameAs": ["https://github.com/DizzyZ7", "https://t.me/dizzy_dev"]
   }
   </script>
-  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Перейти к содержанию</a>
 
   <nav class="site-nav" aria-label="Основная навигация">
     <div class="container nav-inner">
       <a class="logo" href="#top" aria-label="На главную">dimash <em>janibekov</em></a>
       <div class="nav-links">
-        <a href="#projects">проекты</a>
-        <a href="#experience">опыт</a>
-        <a href="#services">услуги</a>
-        <a href="#process">процесс</a>
+        <a href="#projects" data-i18n="nav.projects">проекты</a>
+        <a href="#experience" data-i18n="nav.experience">опыт</a>
+        <a href="#services" data-i18n="nav.services">услуги</a>
+        <a href="#process" data-i18n="nav.process">процесс</a>
       </div>
       <div class="nav-actions">
-        <button class="btn btn-secondary" type="button" id="printResume" aria-label="Сохранить резюме в PDF">резюме PDF</button>
-        <a class="btn btn-primary" href="https://t.me/dizzy_dev" target="_blank" rel="noopener noreferrer">написать</a>
+        <div class="lang-switch" role="group" aria-label="Выбор языка">
+          <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="btn btn-secondary" type="button" id="printResume" data-i18n="nav.resume">резюме PDF</button>
+        <a class="btn btn-primary" href="https://t.me/dizzy_dev" target="_blank" rel="noopener noreferrer" data-i18n="nav.write">написать</a>
       </div>
     </div>
   </nav>
@@ -62,32 +60,32 @@
     <header class="hero" id="top">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow"><span class="eyebrow-dot"></span> backend · fullstack · automation · cybersecurity</div>
-          <h1>Создаю системы, которые <em>убирают рутину</em> и выдерживают продакшен</h1>
-          <p class="hero-lead">Backend/fullstack-инженер с 3+ годами коммерческого опыта. Проектирую API, интеграции, очереди, внутренние сервисы, ботов и AI/RAG-системы; умею заходить в существующий код, разбирать инциденты и доводить решение до стабильной эксплуатации.</p>
+          <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="hero.eyebrow">backend · fullstack · automation · cybersecurity</span></div>
+          <h1 data-i18n-html="hero.title">Создаю системы, которые <em>убирают рутину</em> и выдерживают продакшен</h1>
+          <p class="hero-lead" data-i18n="hero.lead">Python Backend / Integration Engineer с 3+ годами коммерческого опыта. Проектирую API, интеграционные контуры, очереди, внутренние сервисы, ботов и AI/RAG-системы; умею заходить в существующий код, разбирать инциденты и доводить решение до стабильной эксплуатации.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://t.me/dizzy_dev" target="_blank" rel="noopener noreferrer">связаться в Telegram</a>
-            <a class="btn btn-secondary" href="#projects">смотреть кейсы</a>
+            <a class="btn btn-primary" href="https://t.me/dizzy_dev" target="_blank" rel="noopener noreferrer" data-i18n="hero.telegram">связаться в Telegram</a>
+            <a class="btn btn-secondary" href="#projects" data-i18n="hero.cases">смотреть кейсы</a>
             <a class="btn btn-quiet" href="https://github.com/DizzyZ7" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           </div>
-          <div class="hero-note">Удаленно · РФ и распределенные команды · штат, контракт или проектное сотрудничество · русский / English C1</div>
+          <div class="hero-note" data-i18n="hero.note">Санкт-Петербург · офис, гибрид или удаленно · штат, контракт или проектное сотрудничество · русский / English C1 / Czech B2</div>
         </div>
 
         <aside class="profile-card" aria-label="Краткий профиль">
           <div class="profile-head">
             <img class="avatar" src="https://avatars.githubusercontent.com/u/99655528?v=4" alt="Димаш Джанибеков" width="64" height="64">
             <div>
-              <div class="profile-name">Димаш Джанибеков</div>
-              <div class="profile-role">Backend / Fullstack / Automation Engineer</div>
+              <div class="profile-name" data-i18n="profile.name">Димаш Джанибеков</div>
+              <div class="profile-role" data-i18n="profile.role">Python Backend / Integration Engineer</div>
             </div>
           </div>
           <ul class="profile-list">
-            <li><span aria-hidden="true" style="color:var(--teal);font-weight:700;">✓</span><span>3+ года коммерческого опыта</span></li>
-            <li><span aria-hidden="true" style="color:var(--teal);font-weight:700;">✓</span><span>Python ecosystem: FastAPI, Django, Flask, asyncio, Celery</span></li>
-            <li><span aria-hidden="true" style="color:var(--teal);font-weight:700;">✓</span><span>PostgreSQL, Redis, SQLAlchemy, очереди и фоновые задачи</span></li>
-            <li><span aria-hidden="true" style="color:var(--teal);font-weight:700;">✓</span><span>Интеграции, observability, безопасность и эксплуатация production</span></li>
+            <li><span style="color:var(--teal);font-weight:700;">✓</span><span data-i18n="profile.item1">3+ года коммерческого опыта</span></li>
+            <li><span style="color:var(--teal);font-weight:700;">✓</span><span data-i18n="profile.item2">Python ecosystem: FastAPI, Django, Flask, asyncio и Celery</span></li>
+            <li><span style="color:var(--teal);font-weight:700;">✓</span><span data-i18n="profile.item3">PostgreSQL, Redis, SQLAlchemy, очереди и фоновые задачи</span></li>
+            <li><span style="color:var(--teal);font-weight:700;">✓</span><span data-i18n="profile.item4">Интеграции, observability, безопасность и эксплуатация production</span></li>
           </ul>
-          <div class="profile-status"><span class="pulse"></span> открыт к предложениям и новым проектам</div>
+          <div class="profile-status"><span class="pulse"></span><span data-i18n="profile.status">открыт к сильной команде и новым проектам</span></div>
         </aside>
       </div>
     </header>
@@ -95,46 +93,45 @@
     <section class="pathways" aria-label="Варианты сотрудничества">
       <div class="container path-grid">
         <article class="path-card reveal">
-          <span class="path-label" style="background:var(--blue-bg);color:var(--blue);">для работодателя</span>
-          <h2>Инженер в продуктовую команду</h2>
-          <p>Backend / Integration / Automation Engineer: архитектура сервисов, API, данные, очереди, инфраструктура, code review, инциденты и развитие существующих систем.</p>
-          <a class="text-link" href="#experience">посмотреть опыт →</a>
+          <span class="path-label" style="background:var(--blue-bg);color:var(--blue);" data-i18n="paths.employer.label">для работодателя</span>
+          <h2 data-i18n="paths.employer.title">Инженер в продуктовую команду</h2>
+          <p data-i18n="paths.employer.text">Backend / Integration / Automation Engineer: архитектура сервисов, API, данные, очереди, инфраструктура, code review, инциденты и развитие существующих систем.</p>
+          <a class="text-link" href="#experience" data-i18n="paths.employer.link">посмотреть опыт →</a>
         </article>
         <article class="path-card reveal">
-          <span class="path-label" style="background:var(--teal-bg);color:var(--teal);">для бизнеса</span>
-          <h2>Проект под ключ</h2>
-          <p>Проектный подряд: боты, CRM/API-интеграции, backend-сервисы, админки, парсеры и AI/RAG — от схемы процесса до запуска и поддержки.</p>
-          <a class="text-link" href="#services">посмотреть услуги →</a>
+          <span class="path-label" style="background:var(--teal-bg);color:var(--teal);" data-i18n="paths.business.label">для бизнеса</span>
+          <h2 data-i18n="paths.business.title">Проект под ключ</h2>
+          <p data-i18n="paths.business.text">Боты, CRM/API-интеграции, backend-сервисы, внутренние инструменты и AI/RAG — от схемы процесса и архитектуры до запуска и поддержки.</p>
+          <a class="text-link" href="#services" data-i18n="paths.business.link">посмотреть услуги →</a>
         </article>
       </div>
     </section>
 
     <section class="stats" aria-label="Ключевые показатели">
       <div class="container stats-row reveal">
-        <div class="stat"><div class="stat-num">3+</div><div class="stat-label">года коммерческого опыта</div></div>
-        <div class="stat"><div class="stat-num">Tech Lead</div><div class="stat-label">опыт технического лидерства</div></div>
-        <div class="stat"><div class="stat-num">30+</div><div class="stat-label">технологий и платформ в рабочем стеке</div></div>
+        <div class="stat"><div class="stat-num">3+</div><div class="stat-label" data-i18n="stats.years">года коммерческого опыта</div></div>
+        <div class="stat"><div class="stat-num">Tech Lead</div><div class="stat-label" data-i18n="stats.lead">опыт технического лидерства</div></div>
+        <div class="stat"><div class="stat-num">60+</div><div class="stat-label" data-i18n="stats.repos">публичных репозиториев и систем</div></div>
       </div>
     </section>
-
 
     <section class="section expertise-section" id="expertise">
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <span class="section-kicker">инженерный профиль</span>
-            <h2 class="section-title">Не только пишу код — проектирую весь контур системы</h2>
-            <p class="section-desc">Могу закрыть отдельный backend-модуль, интеграционный слой или полный технический цикл: от модели данных и API до деплоя, наблюдаемости и безопасной эксплуатации.</p>
+            <span class="section-kicker" data-i18n="expertise.kicker">инженерный профиль</span>
+            <h2 class="section-title" data-i18n="expertise.title">Не только пишу код — проектирую весь контур системы</h2>
+            <p class="section-desc" data-i18n="expertise.desc">Могу закрыть отдельный backend-модуль, интеграционный слой или полный технический цикл: от модели данных и API до деплоя, наблюдаемости и безопасной эксплуатации.</p>
           </div>
-          <a class="section-side expertise-link" href="#stack">полная карта технологий ↓</a>
+          <a class="section-side expertise-link" href="#stack" data-i18n="expertise.side">полная карта технологий ↓</a>
         </div>
         <div class="expertise-grid reveal">
-          <article class="expertise-card"><span class="expertise-index">01</span><h3>Backend и архитектура</h3><p>Модульные сервисы, REST API, webhooks, авторизация, бизнес-логика, идемпотентность и работа с legacy.</p><div class="expertise-tags"><span>FastAPI</span><span>Django</span><span>asyncio</span></div></article>
-          <article class="expertise-card"><span class="expertise-index">02</span><h3>Данные и асинхронность</h3><p>Схемы БД, миграции, транзакции, кеширование, очереди, фоновые задачи и надежная обработка событий.</p><div class="expertise-tags"><span>PostgreSQL</span><span>Redis</span><span>Celery</span></div></article>
-          <article class="expertise-card"><span class="expertise-index">03</span><h3>Интеграции и автоматизация</h3><p>CRM, helpdesk, 1С, формы, мессенджеры, программы лояльности и внешние API в едином процессе.</p><div class="expertise-tags"><span>Usedesk</span><span>Mindbox</span><span>Telegram</span></div></article>
-          <article class="expertise-card"><span class="expertise-index">04</span><h3>Infrastructure и reliability</h3><p>Контейнеризация, Linux, CI/CD, structured logging, мониторинг, диагностика и восстановление сервисов.</p><div class="expertise-tags"><span>Docker</span><span>Grafana</span><span>Kibana</span></div></article>
-          <article class="expertise-card"><span class="expertise-index">05</span><h3>Безопасность</h3><p>RBAC, JWT, валидация, управление секретами, rate limiting и безопасные границы интеграций.</p><div class="expertise-tags"><span>Cybersecurity</span><span>RBAC</span><span>secure API</span></div></article>
-          <article class="expertise-card"><span class="expertise-index">06</span><h3>AI, RAG и Computer Vision</h3><p>LLM-интеграции, поиск по базе знаний, embeddings, vector storage, обработка текста и видеопотока.</p><div class="expertise-tags"><span>Qdrant</span><span>LangChain</span><span>OpenCV</span></div></article>
+          <article class="expertise-card"><span class="expertise-index">01</span><h3 data-i18n="expertise.1.title">Backend и архитектура</h3><p data-i18n="expertise.1.text">Модульные сервисы, REST API, webhooks, авторизация, бизнес-логика, идемпотентность и работа с legacy.</p><div class="expertise-tags"><span>FastAPI</span><span>Django</span><span>asyncio</span></div></article>
+          <article class="expertise-card"><span class="expertise-index">02</span><h3 data-i18n="expertise.2.title">Данные и асинхронность</h3><p data-i18n="expertise.2.text">Схемы БД, миграции, транзакции, кеширование, очереди, фоновые задачи и надежная обработка событий.</p><div class="expertise-tags"><span>PostgreSQL</span><span>Redis</span><span>Celery</span></div></article>
+          <article class="expertise-card"><span class="expertise-index">03</span><h3 data-i18n="expertise.3.title">Интеграции и автоматизация</h3><p data-i18n="expertise.3.text">CRM, helpdesk, 1С, формы, мессенджеры, программы лояльности и внешние API в едином процессе.</p><div class="expertise-tags"><span>Usedesk</span><span>Mindbox</span><span>Telegram</span></div></article>
+          <article class="expertise-card"><span class="expertise-index">04</span><h3 data-i18n="expertise.4.title">Infrastructure и reliability</h3><p data-i18n="expertise.4.text">Контейнеризация, Linux, CI/CD, structured logging, мониторинг, диагностика и восстановление сервисов.</p><div class="expertise-tags"><span>Docker</span><span>Grafana</span><span>OpenTelemetry</span></div></article>
+          <article class="expertise-card"><span class="expertise-index">05</span><h3 data-i18n="expertise.5.title">Безопасность</h3><p data-i18n="expertise.5.text">RBAC, JWT/OIDC, валидация, управление секретами, rate limiting и безопасные границы интеграций.</p><div class="expertise-tags"><span>RBAC</span><span>OIDC</span><span>secure API</span></div></article>
+          <article class="expertise-card"><span class="expertise-index">06</span><h3 data-i18n="expertise.6.title">AI, RAG и Computer Vision</h3><p data-i18n="expertise.6.text">LLM-интеграции, поиск по базе знаний, embeddings, vector storage, обработка текста и видеопотока.</p><div class="expertise-tags"><span>Qdrant</span><span>LangChain</span><span>OpenCV</span></div></article>
         </div>
       </div>
     </section>
@@ -143,183 +140,122 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <span class="section-kicker">портфолио</span>
-            <h2 class="section-title">Проекты через задачу и результат</h2>
-            <p class="section-desc">Не просто список репозиториев: в каждом кейсе показано, какую проблему решает система и зачем она нужна бизнесу или продукту.</p>
+            <span class="section-kicker" data-i18n="projects.kicker">портфолио</span>
+            <h2 class="section-title" data-i18n="projects.title">Проекты через задачу и результат</h2>
+            <p class="section-desc" data-i18n="projects.desc">Не просто список репозиториев: в каждом кейсе показано, какую проблему решает система и зачем она нужна продукту или команде.</p>
           </div>
-          <div class="section-side">Большинство проектов можно открыть на GitHub и посмотреть архитектуру, документацию и код.</div>
+          <div class="section-side" data-i18n="projects.side">В репозиториях можно посмотреть архитектуру, документацию и код.</div>
         </div>
 
         <div class="filters reveal" role="group" aria-label="Фильтр проектов">
-          <button class="filter active" type="button" data-filter="all">все</button>
-          <button class="filter" type="button" data-filter="featured">флагманские</button>
-          <button class="filter" type="button" data-filter="other">другие работы</button>
+          <button class="filter active" type="button" data-filter="all" data-i18n="filter.all">все</button>
+          <button class="filter" type="button" data-filter="featured" data-i18n="filter.featured">флагманские</button>
+          <button class="filter" type="button" data-filter="other" data-i18n="filter.other">другие работы</button>
         </div>
 
         <div class="projects-grid" id="projectGrid">
           <article class="project-card featured reveal" data-group="featured">
-            <div class="project-top">
-              <div class="project-icon" style="background:var(--blue-bg);color:var(--blue);">◇</div>
-              <span class="project-badge" style="background:var(--blue-bg);color:var(--blue);">gateway</span>
+            <div class="project-top"><div class="project-icon" style="background:var(--teal-bg);color:var(--teal);">◇</div><span class="project-badge" style="background:var(--teal-bg);color:var(--teal);">incident response</span></div>
+            <div class="project-tags"><span class="tag">event-driven</span><span class="tag">security</span><span class="tag">observability</span></div>
+            <h3 class="project-title">StormRelay</h3>
+            <p class="project-sub" data-i18n="project.stormrelay.sub">Платформа корреляции событий и управления инцидентами</p>
+            <div class="case-grid">
+              <div class="case-block"><span class="case-label" style="color:var(--coral);" data-i18n="case.problem">проблема</span><p data-i18n="project.stormrelay.problem">События из разных источников дублируются, теряют контекст и требуют ручного сопоставления.</p></div>
+              <div class="case-block"><span class="case-label" style="color:var(--blue);" data-i18n="case.solution">решение</span><p data-i18n="project.stormrelay.solution">CloudEvents-модель, дедупликация, incident lifecycle, policies, durable runbooks, RBAC/OIDC и audit history.</p></div>
+              <div class="case-value"><strong data-i18n="case.value">польза</strong><span data-i18n="project.stormrelay.value">Единый наблюдаемый путь от webhook до реакции, связанный трассировкой OpenTelemetry.</span></div>
             </div>
+            <div class="project-footer"><div class="tech-row"><span class="tech">Go</span><span class="tech">PostgreSQL</span><span class="tech">NATS</span><span class="tech">OpenTelemetry</span><span class="tech">Docker</span></div><a class="repo-link" href="https://github.com/DizzyZ7/StormRelay" target="_blank" rel="noopener noreferrer" data-i18n="project.repo">репозиторий ↗</a></div>
+          </article>
+
+          <article class="project-card featured reveal" data-group="featured">
+            <div class="project-top"><div class="project-icon" style="background:var(--blue-bg);color:var(--blue);">◇</div><span class="project-badge" style="background:var(--blue-bg);color:var(--blue);">gateway</span></div>
             <div class="project-tags"><span class="tag">интеграции</span><span class="tag">надежность</span><span class="tag">production</span></div>
             <h3 class="project-title">SignalBox</h3>
-            <p class="project-sub">Webhook/API gateway для событий, заявок и уведомлений</p>
+            <p class="project-sub" data-i18n="project.signalbox.sub">Webhook/API gateway для событий, заявок и уведомлений</p>
             <div class="case-grid">
-              <div class="case-block"><span class="case-label" style="color:var(--coral);">проблема</span><p>События из разных источников приходят вразнобой, дублируются или теряются при сбое получателя.</p></div>
-              <div class="case-block"><span class="case-label" style="color:var(--blue);">решение</span><p>Gateway с дедупликацией, очередями, идемпотентностью и повторными попытками доставки.</p></div>
-              <div class="case-value"><strong>польза</strong><span>Система сохраняет события и контролируемо доставляет их даже при временной недоступности внешнего сервиса.</span></div>
+              <div class="case-block"><span class="case-label" style="color:var(--coral);" data-i18n="case.problem">проблема</span><p data-i18n="project.signalbox.problem">События приходят вразнобой, дублируются или теряются при временной недоступности получателя.</p></div>
+              <div class="case-block"><span class="case-label" style="color:var(--blue);" data-i18n="case.solution">решение</span><p data-i18n="project.signalbox.solution">Gateway с хранением, дедупликацией, идемпотентностью, очередями и контролируемыми повторами доставки.</p></div>
+              <div class="case-value"><strong data-i18n="case.value">польза</strong><span data-i18n="project.signalbox.value">События сохраняются и доставляются предсказуемо даже при сбоях внешнего сервиса.</span></div>
             </div>
-            <div class="project-footer">
-              <div class="tech-row"><span class="tech">Go</span><span class="tech">PostgreSQL</span><span class="tech">pgx</span><span class="tech">Docker</span></div>
-              <a class="repo-link" href="https://github.com/DizzyZ7/SignalBox" target="_blank" rel="noopener noreferrer">репозиторий ↗</a>
-            </div>
+            <div class="project-footer"><div class="tech-row"><span class="tech">Go</span><span class="tech">PostgreSQL</span><span class="tech">pgx</span><span class="tech">Docker</span></div><a class="repo-link" href="https://github.com/DizzyZ7/SignalBox" target="_blank" rel="noopener noreferrer" data-i18n="project.repo">репозиторий ↗</a></div>
           </article>
 
           <article class="project-card featured reveal" data-group="featured">
-            <div class="project-top">
-              <div class="project-icon" style="background:var(--purple-bg);color:var(--purple);">◇</div>
-              <span class="project-badge" style="background:var(--purple-bg);color:var(--purple);">AI / risk</span>
-            </div>
+            <div class="project-top"><div class="project-icon" style="background:var(--purple-bg);color:var(--purple);">◇</div><span class="project-badge" style="background:var(--purple-bg);color:var(--purple);">AI / risk</span></div>
             <div class="project-tags"><span class="tag">multi-agent</span><span class="tag">risk engine</span><span class="tag">audit</span></div>
             <h3 class="project-title">VerdictMesh</h3>
-            <p class="project-sub">Автономная платформа вероятностного анализа и контролируемого paper trading</p>
+            <p class="project-sub" data-i18n="project.verdictmesh.sub">Платформа вероятностного анализа и контролируемого paper trading</p>
             <div class="case-grid">
-              <div class="case-block"><span class="case-label" style="color:var(--coral);">проблема</span><p>Один прогноз или одна языковая модель не дают достаточной проверяемости для решений, связанных с риском.</p></div>
-              <div class="case-block"><span class="case-label" style="color:var(--blue);">решение</span><p>Четыре независимые аналитические роли, детерминированный consensus, CLOB-данные, fail-closed правила и отдельный risk engine.</p></div>
-              <div class="case-value"><strong>польза</strong><span>Каждое решение сохраняет доказательства, неопределенность и причину отказа; модель не может обойти риск-контур или получить доступ к исполнению.</span></div>
+              <div class="case-block"><span class="case-label" style="color:var(--coral);" data-i18n="case.problem">проблема</span><p data-i18n="project.verdictmesh.problem">Один прогноз или одна языковая модель не дают достаточной проверяемости для решений, связанных с риском.</p></div>
+              <div class="case-block"><span class="case-label" style="color:var(--blue);" data-i18n="case.solution">решение</span><p data-i18n="project.verdictmesh.solution">Независимые аналитические роли, детерминированный consensus, evidence trail, fail-closed правила и отдельный risk engine.</p></div>
+              <div class="case-value"><strong data-i18n="case.value">польза</strong><span data-i18n="project.verdictmesh.value">Каждое решение сохраняет доказательства, неопределенность и явную причину отказа.</span></div>
             </div>
-            <div class="project-footer">
-              <div class="tech-row"><span class="tech">FastAPI</span><span class="tech">PostgreSQL</span><span class="tech">Alembic</span><span class="tech">Docker</span><span class="tech">Claude</span></div>
-              <a class="repo-link" href="https://github.com/DizzyZ7/verdictmesh" target="_blank" rel="noopener noreferrer">репозиторий ↗</a>
-            </div>
+            <div class="project-footer"><div class="tech-row"><span class="tech">FastAPI</span><span class="tech">PostgreSQL</span><span class="tech">Alembic</span><span class="tech">Docker</span><span class="tech">LLM</span></div><a class="repo-link" href="https://github.com/DizzyZ7/verdictmesh" target="_blank" rel="noopener noreferrer" data-i18n="project.repo">репозиторий ↗</a></div>
           </article>
 
           <article class="project-card featured reveal" data-group="featured">
-            <div class="project-top">
-              <div class="project-icon" style="background:var(--purple-bg);color:var(--purple);">◇</div>
-              <span class="project-badge" style="background:var(--purple-bg);color:var(--purple);">AI scoring</span>
-            </div>
-            <div class="project-tags"><span class="tag">Telegram</span><span class="tag">mini CRM</span><span class="tag">LLM</span></div>
-            <h3 class="project-title">Thailand Lead Radar</h3>
-            <p class="project-sub">Радар лидов с AI-оценкой обращений</p>
-            <div class="case-grid">
-              <div class="case-block"><span class="case-label" style="color:var(--coral);">проблема</span><p>Менеджер не успевает быстро квалифицировать каждое входящее сообщение.</p></div>
-              <div class="case-block"><span class="case-label" style="color:var(--blue);">решение</span><p>Скоринг, карточки проверки, follow-up и мини-CRM со статусами и историей.</p></div>
-              <div class="case-value"><strong>польза</strong><span>Команда сначала обрабатывает самые перспективные обращения и не теряет историю коммуникации.</span></div>
-            </div>
-            <div class="project-footer">
-              <div class="tech-row"><span class="tech">aiogram 3</span><span class="tech">Telethon</span><span class="tech">Claude</span><span class="tech">PostgreSQL</span><span class="tech">Alembic</span></div>
-              <a class="repo-link" href="https://github.com/DizzyZ7/Concierge-Lead-Gen-Bot" target="_blank" rel="noopener noreferrer">репозиторий ↗</a>
-            </div>
-          </article>
-
-          <article class="project-card featured reveal" data-group="featured">
-            <div class="project-top">
-              <div class="project-icon" style="background:var(--amber-bg);color:var(--amber);">◇</div>
-              <span class="project-badge" style="background:var(--amber-bg);color:var(--amber);">fintech MVP</span>
-            </div>
-            <div class="project-tags"><span class="tag">аналитика</span><span class="tag">прогнозирование</span><span class="tag">MVP</span></div>
-            <h3 class="project-title">SME Cashflow Copilot</h3>
-            <p class="project-sub">Финансовый помощник для малого бизнеса</p>
-            <div class="case-grid">
-              <div class="case-block"><span class="case-label" style="color:var(--coral);">проблема</span><p>Кассовые разрывы и риски становятся заметны только тогда, когда уже мешают работе.</p></div>
-              <div class="case-block"><span class="case-label" style="color:var(--blue);">решение</span><p>Прогноз денежного потока, риск-сигналы, сценарии «что если», API и интерфейс.</p></div>
-              <div class="case-value"><strong>польза</strong><span>Владелец получает ранний сигнал о риске и может скорректировать платежи заранее.</span></div>
-            </div>
-            <div class="project-footer">
-              <div class="tech-row"><span class="tech">Python</span><span class="tech">Streamlit</span><span class="tech">SQLite</span><span class="tech">Docker</span><span class="tech">HTTP API</span></div>
-              <a class="repo-link" href="https://github.com/DizzyZ7/sme-cashflow-copilot" target="_blank" rel="noopener noreferrer">репозиторий ↗</a>
-            </div>
-          </article>
-
-          <article class="project-card featured reveal" data-group="featured">
-            <div class="project-top">
-              <div class="project-icon" style="background:var(--pink-bg);color:var(--pink);">◇</div>
-              <span class="project-badge" style="background:var(--pink-bg);color:var(--pink);">fullstack AI</span>
-            </div>
+            <div class="project-top"><div class="project-icon" style="background:var(--pink-bg);color:var(--pink);">◇</div><span class="project-badge" style="background:var(--pink-bg);color:var(--pink);">fullstack AI</span></div>
             <div class="project-tags"><span class="tag">PWA</span><span class="tag">semantic search</span><span class="tag">SaaS</span></div>
             <h3 class="project-title">AI Memo</h3>
-            <p class="project-sub">Voice-first PWA для заметок, задач, смыслового поиска и еженедельных инсайтов</p>
+            <p class="project-sub" data-i18n="project.aimemo.sub">Voice-first PWA для заметок, задач, смыслового поиска и еженедельных инсайтов</p>
             <div class="case-grid">
-              <div class="case-block"><span class="case-label" style="color:var(--coral);">проблема</span><p>Голосовые мысли и быстрые заметки накапливаются, но задачи, повторяющиеся темы и важные связи остаются скрытыми.</p></div>
-              <div class="case-block"><span class="case-label" style="color:var(--blue);">решение</span><p>Запись голоса, транскрибация, AI-анализ, embeddings, semantic search, очередь обработки, OAuth и облачное хранение.</p></div>
-              <div class="case-value"><strong>польза</strong><span>Продукт работает сразу в локальном demo-режиме и постепенно масштабируется до облачного сервиса без переписывания интерфейса.</span></div>
+              <div class="case-block"><span class="case-label" style="color:var(--coral);" data-i18n="case.problem">проблема</span><p data-i18n="project.aimemo.problem">Голосовые мысли и быстрые заметки накапливаются, но задачи, повторяющиеся темы и важные связи остаются скрытыми.</p></div>
+              <div class="case-block"><span class="case-label" style="color:var(--blue);" data-i18n="case.solution">решение</span><p data-i18n="project.aimemo.solution">Запись, транскрибация, AI-анализ, embeddings, semantic search, очередь обработки и OAuth.</p></div>
+              <div class="case-value"><strong data-i18n="case.value">польза</strong><span data-i18n="project.aimemo.value">Продукт работает локально и масштабируется до облачного сервиса без переписывания интерфейса.</span></div>
             </div>
-            <div class="project-footer">
-              <div class="tech-row"><span class="tech">Next.js 15</span><span class="tech">React 19</span><span class="tech">TypeScript</span><span class="tech">tRPC</span><span class="tech">Prisma</span><span class="tech">pgvector</span></div>
-              <a class="repo-link" href="https://github.com/DizzyZ7/AI-MEMO" target="_blank" rel="noopener noreferrer">репозиторий ↗</a>
-            </div>
+            <div class="project-footer"><div class="tech-row"><span class="tech">Next.js</span><span class="tech">React</span><span class="tech">TypeScript</span><span class="tech">tRPC</span><span class="tech">pgvector</span></div><a class="repo-link" href="https://github.com/DizzyZ7/AI-MEMO" target="_blank" rel="noopener noreferrer" data-i18n="project.repo">репозиторий ↗</a></div>
           </article>
 
           <article class="project-card featured reveal" data-group="featured">
-            <div class="project-top">
-              <div class="project-icon" style="background:var(--coral-bg);color:var(--coral);">◇</div>
-              <span class="project-badge" style="background:var(--coral-bg);color:var(--coral);">offline alerting</span>
-            </div>
+            <div class="project-top"><div class="project-icon" style="background:var(--coral-bg);color:var(--coral);">◇</div><span class="project-badge" style="background:var(--coral-bg);color:var(--coral);">offline alerting</span></div>
             <div class="project-tags"><span class="tag">STT / TTS</span><span class="tag">edge</span><span class="tag">observability</span></div>
-            <h3 class="project-title">Автономная голосовая система оповещений</h3>
-            <p class="project-sub">Offline voice-платформа с распознаванием, синтезом речи и промышленным alert flow</p>
+            <h3 class="project-title" data-i18n="project.voice.title">Автономная голосовая система оповещений</h3>
+            <p class="project-sub" data-i18n="project.voice.sub">Offline STT/TTS-платформа с промышленным жизненным циклом тревоги</p>
             <div class="case-grid">
-              <div class="case-block"><span class="case-label" style="color:var(--coral);">проблема</span><p>Критические команды и тревоги не должны зависеть от облака, а оператору нужен контролируемый цикл подтверждения и эскалации.</p></div>
-              <div class="case-block"><span class="case-label" style="color:var(--blue);">решение</span><p>Раздельные STT, TTS и orchestrator-сервисы, MQTT, retries, idempotency, raise/ack/pending API, таймауты и уровни эскалации.</p></div>
-              <div class="case-value"><strong>польза</strong><span>Система работает локально на ПК или Raspberry Pi, управляет оборудованием и сохраняет наблюдаемый жизненный цикл каждой тревоги.</span></div>
+              <div class="case-block"><span class="case-label" style="color:var(--coral);" data-i18n="case.problem">проблема</span><p data-i18n="project.voice.problem">Критические команды и тревоги не должны зависеть от доступности облака.</p></div>
+              <div class="case-block"><span class="case-label" style="color:var(--blue);" data-i18n="case.solution">решение</span><p data-i18n="project.voice.solution">Раздельные STT, TTS и orchestrator-сервисы, MQTT, retries, idempotency, подтверждения и уровни эскалации.</p></div>
+              <div class="case-value"><strong data-i18n="case.value">польза</strong><span data-i18n="project.voice.value">Система работает локально и сохраняет наблюдаемый жизненный цикл каждой тревоги.</span></div>
             </div>
-            <div class="project-footer">
-              <div class="tech-row"><span class="tech">FastAPI</span><span class="tech">Vosk / Whisper</span><span class="tech">RHVoice / Piper</span><span class="tech">MQTT</span><span class="tech">Prometheus</span></div>
-              <a class="repo-link" href="https://github.com/DizzyZ7/voice_project_rhvoice" target="_blank" rel="noopener noreferrer">репозиторий ↗</a>
-            </div>
+            <div class="project-footer"><div class="tech-row"><span class="tech">FastAPI</span><span class="tech">Whisper / Vosk</span><span class="tech">RHVoice</span><span class="tech">MQTT</span><span class="tech">Prometheus</span></div><a class="repo-link" href="https://github.com/DizzyZ7/voice_project_rhvoice" target="_blank" rel="noopener noreferrer" data-i18n="project.repo">репозиторий ↗</a></div>
           </article>
 
           <article class="project-card featured reveal" data-group="featured">
-            <div class="project-top">
-              <div class="project-icon" style="background:var(--blue-bg);color:var(--blue);">◇</div>
-              <span class="project-badge" style="background:var(--blue-bg);color:var(--blue);">network ops</span>
-            </div>
+            <div class="project-top"><div class="project-icon" style="background:var(--amber-bg);color:var(--amber);">◇</div><span class="project-badge" style="background:var(--amber-bg);color:var(--amber);">network ops</span></div>
             <div class="project-tags"><span class="tag">NOC</span><span class="tag">telemetry</span><span class="tag">anomaly detection</span></div>
             <h3 class="project-title">TelcoNet Guardian</h3>
-            <p class="project-sub">Автономный мониторинг telecom и packet core инфраструктуры</p>
+            <p class="project-sub" data-i18n="project.telco.sub">Автономный мониторинг telecom и packet core инфраструктуры</p>
             <div class="case-grid">
-              <div class="case-block"><span class="case-label" style="color:var(--coral);">проблема</span><p>Состояние узлов, BGP-соседей, интерфейсов и SLA часто проверяется разными инструментами и вручную сопоставляется во время инцидента.</p></div>
-              <div class="case-block"><span class="case-label" style="color:var(--blue);">решение</span><p>Асинхронные ICMP/TCP/BGP/SNMP-проверки, topology discovery, SLA engine, anomaly detection, метрики и Telegram alerts.</p></div>
-              <div class="case-value"><strong>польза</strong><span>Единый контур наблюдения быстрее показывает деградацию сети и дает NOC-команде контекст до ручной диагностики.</span></div>
+              <div class="case-block"><span class="case-label" style="color:var(--coral);" data-i18n="case.problem">проблема</span><p data-i18n="project.telco.problem">Узлы, BGP-соседи, интерфейсы и SLA проверяются разными инструментами, а инциденты теряют контекст.</p></div>
+              <div class="case-block"><span class="case-label" style="color:var(--blue);" data-i18n="case.solution">решение</span><p data-i18n="project.telco.solution">Async ICMP/TCP/BGP/SNMP checks, topology discovery, SLA engine, anomaly detection и metrics.</p></div>
+              <div class="case-value"><strong data-i18n="case.value">польза</strong><span data-i18n="project.telco.value">NOC получает единый контекст деградации до долгой ручной диагностики.</span></div>
             </div>
-            <div class="project-footer">
-              <div class="tech-row"><span class="tech">Python</span><span class="tech">asyncio</span><span class="tech">FastAPI</span><span class="tech">SNMP</span><span class="tech">Prometheus</span><span class="tech">Kubernetes</span></div>
-              <a class="repo-link" href="https://github.com/DizzyZ7/TelcoNet-Guardian" target="_blank" rel="noopener noreferrer">репозиторий ↗</a>
-            </div>
+            <div class="project-footer"><div class="tech-row"><span class="tech">Python</span><span class="tech">asyncio</span><span class="tech">FastAPI</span><span class="tech">SNMP</span><span class="tech">Prometheus</span></div><a class="repo-link" href="https://github.com/DizzyZ7/TelcoNet-Guardian" target="_blank" rel="noopener noreferrer" data-i18n="project.repo">репозиторий ↗</a></div>
           </article>
 
           <article class="project-card reveal" data-group="other">
-            <div class="project-top"><div class="project-icon" style="background:var(--amber-bg);color:var(--amber);">◇</div></div>
-            <div class="project-tags"><span class="tag">mobile</span><span class="tag">self-hosted</span><span class="tag">home inventory</span></div>
+            <div class="project-top"><div class="project-icon" style="background:var(--teal-bg);color:var(--teal);">◇</div><span class="project-badge" style="background:var(--teal-bg);color:var(--teal);">self-hosted</span></div>
+            <div class="project-tags"><span class="tag">mobile</span><span class="tag">inventory</span><span class="tag">privacy</span></div>
             <h3 class="project-title">HomeLedger</h3>
-            <p class="project-sub">Self-hosted приложение для учета домашнего имущества, гарантий, чеков и регулярного обслуживания.</p>
-            <div class="project-footer"><div class="tech-row"><span class="tech">Flutter</span><span class="tech">FastAPI</span><span class="tech">PostgreSQL</span><span class="tech">JWT</span></div><a class="repo-link" href="https://github.com/DizzyZ7/home-ledger" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+            <p class="project-sub" data-i18n="project.homeledger.sub">Self-hosted учет имущества, гарантий и обслуживания</p>
+            <div class="case-grid">
+              <div class="case-block"><span class="case-label" style="color:var(--coral);" data-i18n="case.problem">проблема</span><p data-i18n="project.homeledger.problem">Чеки, гарантии и сроки обслуживания лежат в разных местах и забываются.</p></div>
+              <div class="case-block"><span class="case-label" style="color:var(--blue);" data-i18n="case.solution">решение</span><p data-i18n="project.homeledger.solution">Мобильный клиент, backend API, роли, JWT, PostgreSQL и локальное развертывание.</p></div>
+              <div class="case-value"><strong data-i18n="case.value">польза</strong><span data-i18n="project.homeledger.value">Единый приватный каталог без зависимости от чужого SaaS.</span></div>
+            </div>
+            <div class="project-footer"><div class="tech-row"><span class="tech">Flutter</span><span class="tech">FastAPI</span><span class="tech">PostgreSQL</span><span class="tech">Docker</span></div><a class="repo-link" href="https://github.com/DizzyZ7/home-ledger" target="_blank" rel="noopener noreferrer" data-i18n="project.repo">репозиторий ↗</a></div>
           </article>
 
           <article class="project-card reveal" data-group="other">
-            <div class="project-top"><div class="project-icon" style="background:var(--purple-bg);color:var(--purple);">◇</div></div>
-            <div class="project-tags"><span class="tag">QA</span><span class="tag">microservices</span></div>
-            <h3 class="project-title">QA Microservices E2E Framework</h3>
-            <p class="project-sub">Сквозное тестирование API → UI → БД для микросервисной архитектуры.</p>
-            <div class="project-footer"><div class="tech-row"><span class="tech">Python</span><span class="tech">Playwright</span><span class="tech">E2E</span></div><a class="repo-link" href="https://github.com/DizzyZ7/qa-microservices-e2e-playwright-py" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
-          </article>
-
-          <article class="project-card reveal" data-group="other">
-            <div class="project-top"><div class="project-icon" style="background:var(--teal-bg);color:var(--teal);">◇</div></div>
-            <div class="project-tags"><span class="tag">Telegram product</span><span class="tag">moderation</span><span class="tag">trust</span></div>
+            <div class="project-top"><div class="project-icon" style="background:var(--purple-bg);color:var(--purple);">◇</div><span class="project-badge" style="background:var(--purple-bg);color:var(--purple);">community</span></div>
+            <div class="project-tags"><span class="tag">Telegram</span><span class="tag">moderation</span><span class="tag">reputation</span></div>
             <h3 class="project-title">Ryadom Bot</h3>
-            <p class="project-sub">Платформа локальной взаимопомощи: заявки, отклики, рейтинги, модерация, жалобы, аудит и антиспам.</p>
-            <div class="project-footer"><div class="tech-row"><span class="tech">aiogram 3</span><span class="tech">PostgreSQL</span><span class="tech">SQLAlchemy async</span><span class="tech">Alembic</span></div><a class="repo-link" href="https://github.com/DizzyZ7/ryadom-bot" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
-          </article>
-
-          <article class="project-card reveal" data-group="other">
-            <div class="project-top"><div class="project-icon" style="background:var(--amber-bg);color:var(--amber);">◇</div></div>
-            <div class="project-tags"><span class="tag">simulation</span><span class="tag">Java</span><span class="tag">game systems</span></div>
-            <h3 class="project-title">CHRONICA</h3>
-            <p class="project-sub">Симуляция живого мира для Minecraft: цивилизации, дипломатия, экономика, торговля, память NPC и процедурная история.</p>
-            <div class="project-footer"><div class="tech-row"><span class="tech">Java 21</span><span class="tech">NeoForge</span><span class="tech">SavedData</span><span class="tech">JUnit 5</span></div><a class="repo-link" href="https://github.com/DizzyZ7/CHRONICA" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+            <p class="project-sub" data-i18n="project.ryadom.sub">Платформа локальной взаимопомощи с модерацией и репутацией</p>
+            <div class="case-grid">
+              <div class="case-block"><span class="case-label" style="color:var(--coral);" data-i18n="case.problem">проблема</span><p data-i18n="project.ryadom.problem">Локальные просьбы о помощи быстро теряются и требуют доверия между незнакомыми людьми.</p></div>
+              <div class="case-block"><span class="case-label" style="color:var(--blue);" data-i18n="case.solution">решение</span><p data-i18n="project.ryadom.solution">Статусы, география, отклики, рейтинг, anti-spam, модерация и полный audit trail.</p></div>
+              <div class="case-value"><strong data-i18n="case.value">польза</strong><span data-i18n="project.ryadom.value">Контролируемый процесс от публикации просьбы до завершенного отклика.</span></div>
+            </div>
+            <div class="project-footer"><div class="tech-row"><span class="tech">aiogram 3</span><span class="tech">PostgreSQL</span><span class="tech">SQLAlchemy</span><span class="tech">Alembic</span></div><a class="repo-link" href="https://github.com/DizzyZ7/ryadom-bot" target="_blank" rel="noopener noreferrer" data-i18n="project.repo">репозиторий ↗</a></div>
           </article>
         </div>
       </div>
@@ -329,180 +265,85 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <span class="section-kicker">коммерческий опыт</span>
-            <h2 class="section-title">Разработка, автоматизация и эксплуатация</h2>
-            <p class="section-desc">Работал не только с новым кодом, но и с реальными интеграциями, чужими системами, инцидентами и ограничениями продакшена.</p>
+            <span class="section-kicker" data-i18n="experience.kicker">опыт</span>
+            <h2 class="section-title" data-i18n="experience.title">Коммерческая разработка и эксплуатация</h2>
+            <p class="section-desc" data-i18n="experience.desc">Работал с новым и существующим кодом, внешними платформами, инцидентами, SLA и реальными ограничениями production.</p>
           </div>
-          <button class="btn btn-secondary" type="button" data-print>сохранить в PDF</button>
         </div>
-
         <div class="experience">
-          <article class="job reveal">
-            <div>
-              <div class="job-period">Октябрь 2025 — январь 2026</div>
-              <h3 class="job-company">MedClick</h3>
-              <div class="job-role">Tech Lead</div>
-            </div>
-            <div class="job-body">
-              <p>Поддержка и развитие онлайн-платформы компании: backend, интеграции, SQL-логика, Telegram-боты и эксплуатация серверов.</p>
-              <ul class="job-list">
-                <li>Координировал задачи разработчиков и вел техническую документацию.</li>
-                <li>Развивал CRM/helpdesk-интеграции и автоматизировал операционные сценарии.</li>
-                <li>Участвовал в диагностике инцидентов, восстановлении сервисов и повышении отказоустойчивости.</li>
-              </ul>
-              <div class="job-tags"><span class="tech">Python</span><span class="tech">PHP / Yii2</span><span class="tech">SQL</span><span class="tech">REST API</span><span class="tech">Telegram Bot API</span></div>
-            </div>
-          </article>
-
-          <article class="job reveal">
-            <div>
-              <div class="job-period">Ноябрь 2023 — октябрь 2025</div>
-              <h3 class="job-company">ПРОФИТЭНДХОРЕКА</h3>
-              <div class="job-role">Инженер автоматизации</div>
-            </div>
-            <div class="job-body">
-              <p>Развитие внутренних и клиентских IT-систем для пяти ресторанных сетей: ТОКИО-CITY, BAHROMA, VILLA VERDE, CRISTAL и «Городские кондитерские №1».</p>
-              <ul class="job-list">
-                <li>Проектировал API-интеграции между CRM, Mindbox, Usedesk, 1С, программами лояльности и внутренними сервисами.</li>
-                <li>Автоматизировал маршрутизацию обращений, SLA, статусы, уведомления и обработку данных.</li>
-                <li>Разрабатывал Python-сервисы, скрипты и ботов; анализировал сбои и сопровождал существующий код.</li>
-              </ul>
-              <div class="job-tags"><span class="tech">Python</span><span class="tech">SQL</span><span class="tech">Usedesk</span><span class="tech">Mindbox</span><span class="tech">CRM</span><span class="tech">Grafana</span><span class="tech">Kibana</span></div>
-            </div>
-          </article>
-
-          <article class="job reveal">
-            <div>
-              <div class="job-period">Декабрь 2022 — ноябрь 2023</div>
-              <h3 class="job-company">Техфорвард</h3>
-              <div class="job-role">Python-разработчик</div>
-            </div>
-            <div class="job-body">
-              <p>Разработка backend-логики кроссплатформенного приложения аналитики трансляций.</p>
-              <ul class="job-list">
-                <li>Реализовывал обработку, агрегацию и выдачу статистики по трансляциям.</li>
-                <li>Проектировал API для аналитических отчетов и участвовал в интеграции с desktop-клиентом.</li>
-                <li>Исправлял ошибки, оптимизировал обработку данных и поддерживал рабочие сборки.</li>
-              </ul>
-              <div class="job-tags"><span class="tech">Python</span><span class="tech">API</span><span class="tech">Data processing</span><span class="tech">Desktop integration</span></div>
-            </div>
-          </article>
+          <article class="job reveal"><div><div class="job-period" data-i18n="job.independent.period">Январь 2026 — сейчас</div><h3 class="job-company" data-i18n="job.independent.company">Независимая разработка</h3><div class="job-role" data-i18n="job.independent.role">Backend & Automation Developer</div></div><div class="job-body"><p data-i18n="job.independent.text">Проектирование и выпуск production-style backend, интеграционных и AI-систем: архитектура, API, данные, Docker, CI/CD, observability, тесты и документация.</p><ul class="job-list"><li data-i18n="job.independent.1">Разработал event-driven платформы с дедупликацией, durable queues, RBAC/OIDC, audit trail и OpenTelemetry.</li><li data-i18n="job.independent.2">Собрал AI/RAG, computer vision, Telegram и fullstack-продукты с воспроизводимым локальным запуском.</li></ul><div class="job-tags"><span class="tech">Python</span><span class="tech">Go</span><span class="tech">FastAPI</span><span class="tech">PostgreSQL</span><span class="tech">Docker</span></div></div></article>
+          <article class="job reveal"><div><div class="job-period" data-i18n="job.medclick.period">Октябрь 2025 — январь 2026</div><h3 class="job-company">MedClick</h3><div class="job-role" data-i18n="job.medclick.role">Технический специалист / Tech Lead</div></div><div class="job-body"><p data-i18n="job.medclick.text">Поддержка и развитие онлайн-платформы: backend, интеграции, SQL-логика, Telegram-боты, техническая документация и Linux-инфраструктура.</p><ul class="job-list"><li data-i18n="job.medclick.1">Координировал задачи разработчиков и удерживал контекст между бизнесом, поддержкой и кодом.</li><li data-i18n="job.medclick.2">Участвовал в диагностике инцидентов, восстановлении сервисов и повышении надежности.</li></ul><div class="job-tags"><span class="tech">Python</span><span class="tech">PHP / Yii2</span><span class="tech">SQL</span><span class="tech">REST API</span><span class="tech">Linux</span></div></div></article>
+          <article class="job reveal"><div><div class="job-period" data-i18n="job.horeca.period">Ноябрь 2023 — октябрь 2025</div><h3 class="job-company">ПРОФИТЭНДХОРЕКА</h3><div class="job-role" data-i18n="job.horeca.role">Инженер автоматизации и системных интеграций</div></div><div class="job-body"><p data-i18n="job.horeca.text">Разработка и сопровождение интеграционной инфраструктуры ресторанных процессов: CRM/helpdesk, 1С, loyalty, Telegram, аналитика и автоматизация.</p><ul class="job-list"><li data-i18n="job.horeca.1">Проектировал API-интеграции между Usedesk, Mindbox, 1С, сайтами, программами лояльности и внутренними сервисами.</li><li data-i18n="job.horeca.2">Автоматизировал маршрутизацию обращений, SLA, статусы, уведомления и регулярную обработку данных.</li></ul><div class="job-tags"><span class="tech">Python</span><span class="tech">SQL</span><span class="tech">Usedesk</span><span class="tech">Mindbox</span><span class="tech">Grafana</span></div></div></article>
+          <article class="job reveal"><div><div class="job-period" data-i18n="job.techforward.period">Декабрь 2022 — август 2023</div><h3 class="job-company">Techforward</h3><div class="job-role" data-i18n="job.techforward.role">Python-разработчик, контракт</div></div><div class="job-body"><p data-i18n="job.techforward.text">Backend-логика кроссплатформенного приложения аналитики трансляций: обработка, агрегация и выдача статистики.</p><ul class="job-list"><li data-i18n="job.techforward.1">Проектировал API для аналитических отчетов и участвовал в интеграции с desktop-клиентом.</li><li data-i18n="job.techforward.2">Исправлял ошибки, оптимизировал обработку данных и поддерживал рабочие сборки.</li></ul><div class="job-tags"><span class="tech">Python</span><span class="tech">API</span><span class="tech">Data processing</span><span class="tech">Desktop integration</span></div></div></article>
         </div>
       </div>
     </section>
 
     <section class="section" id="services">
       <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="section-kicker">для бизнеса</span>
-            <h2 class="section-title">Что могу собрать под ключ</h2>
-            <p class="section-desc">Решения для процессов, где теряются заявки, данные приходится копировать руками, а сотрудники тратят время на повторяющиеся действия.</p>
-          </div>
-        </div>
-
+        <div class="section-head reveal"><div><span class="section-kicker" data-i18n="services.kicker">для бизнеса</span><h2 class="section-title" data-i18n="services.title">Что могу собрать под ключ</h2><p class="section-desc" data-i18n="services.desc">Решения для процессов, где теряются заявки, данные копируются руками, а сотрудники повторяют одни и те же действия.</p></div></div>
         <div class="services-grid reveal">
-          <article class="service"><div class="service-icon" style="background:var(--purple-bg);color:var(--purple);">•</div><h3>Telegram / WhatsApp / MAX-боты</h3><p>Заявки, запись, уведомления, личные кабинеты и сценарии обслуживания.</p></article>
-          <article class="service"><div class="service-icon" style="background:var(--blue-bg);color:var(--blue);">•</div><h3>CRM и API-интеграции</h3><p>Bitrix24, amoCRM, Usedesk, Mindbox, 1С, Tilda и внешние API.</p></article>
-          <article class="service"><div class="service-icon" style="background:var(--coral-bg);color:var(--coral);">•</div><h3>Сайты и личные кабинеты</h3><p>Интерфейсы, связанные с базой, ролями, бизнес-логикой и внешними системами.</p></article>
-          <article class="service"><div class="service-icon" style="background:var(--amber-bg);color:var(--amber);">•</div><h3>Внутренние админки</h3><p>Панели заявок, заказов, обращений, отчетов, ролей и доступов.</p></article>
-          <article class="service"><div class="service-icon" style="background:var(--pink-bg);color:var(--pink);">•</div><h3>Парсеры и обработка данных</h3><p>Сбор, очистка, сопоставление, выгрузка и регулярная автоматизация.</p></article>
-          <article class="service"><div class="service-icon" style="background:var(--teal-bg);color:var(--teal);">•</div><h3>AI/RAG по базе знаний</h3><p>Ответы клиентам и сотрудникам с поиском по документам и контролем источников.</p></article>
-          <article class="service"><div class="service-icon" style="background:var(--purple-bg);color:var(--purple);">•</div><h3>Backend-сервисы и MVP</h3><p>Архитектура, API, база данных, интерфейс, деплой и дальнейшее развитие.</p></article>
-          <article class="service"><div class="service-icon" style="background:var(--blue-bg);color:var(--blue);">•</div><h3>Аудит и усиление надежности</h3><p>Логи, мониторинг, обработка ошибок, права доступа и безопасные интеграции.</p></article>
-          <article class="service"><div class="service-icon" style="background:var(--amber-bg);color:var(--amber);">•</div><h3>Поддержка существующего проекта</h3><p>Разбор чужого кода, исправление ошибок, рефакторинг и развитие без переписывания с нуля.</p></article>
+          <article class="service"><div class="service-icon" style="background:var(--purple-bg);color:var(--purple);">•</div><h3 data-i18n="service.1.title">Telegram-боты и Mini Apps</h3><p data-i18n="service.1.text">Заявки, запись, уведомления, кабинеты, модерация и сервисные сценарии.</p></article>
+          <article class="service"><div class="service-icon" style="background:var(--blue-bg);color:var(--blue);">•</div><h3 data-i18n="service.2.title">CRM и API-интеграции</h3><p data-i18n="service.2.text">Bitrix24, amoCRM, Usedesk, Mindbox, 1С, сайты, формы и внешние API.</p></article>
+          <article class="service"><div class="service-icon" style="background:var(--coral-bg);color:var(--coral);">•</div><h3 data-i18n="service.3.title">Сайты и личные кабинеты</h3><p data-i18n="service.3.text">Интерфейсы, связанные с данными, ролями, бизнес-логикой и внешними системами.</p></article>
+          <article class="service"><div class="service-icon" style="background:var(--amber-bg);color:var(--amber);">•</div><h3 data-i18n="service.4.title">Внутренние админки</h3><p data-i18n="service.4.text">Панели заявок, заказов, статусов, отчетов, ролей и доступов.</p></article>
+          <article class="service"><div class="service-icon" style="background:var(--pink-bg);color:var(--pink);">•</div><h3 data-i18n="service.5.title">Парсеры и обработка данных</h3><p data-i18n="service.5.text">Сбор, очистка, сопоставление, выгрузка и регулярная автоматизация.</p></article>
+          <article class="service"><div class="service-icon" style="background:var(--teal-bg);color:var(--teal);">•</div><h3 data-i18n="service.6.title">AI/RAG по базе знаний</h3><p data-i18n="service.6.text">Ответы клиентам и сотрудникам с поиском по документам и контролем источников.</p></article>
+          <article class="service"><div class="service-icon" style="background:var(--purple-bg);color:var(--purple);">•</div><h3 data-i18n="service.7.title">Backend-сервисы и MVP</h3><p data-i18n="service.7.text">Архитектура, API, база данных, интерфейс, деплой и дальнейшее развитие.</p></article>
+          <article class="service"><div class="service-icon" style="background:var(--blue-bg);color:var(--blue);">•</div><h3 data-i18n="service.8.title">Аудит и усиление надежности</h3><p data-i18n="service.8.text">Логи, мониторинг, обработка ошибок, права доступа и безопасные интеграции.</p></article>
+          <article class="service"><div class="service-icon" style="background:var(--amber-bg);color:var(--amber);">•</div><h3 data-i18n="service.9.title">Поддержка существующего проекта</h3><p data-i18n="service.9.text">Разбор чужого кода, исправление ошибок, рефакторинг и развитие без бессмысленного rewrite.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft pricing-section" id="pricing">
+    <section class="section section-soft process-section" id="process">
       <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="section-kicker">ориентиры для проектов</span>
-            <h2 class="section-title">Стоимость разработки</h2>
-            <p class="section-desc">Точная оценка появляется после короткого разбора процесса, интеграций и границ первой версии.</p>
-          </div>
-          <div class="section-side">Проектный формат: фиксированная стоимость этапа, MVP или почасовое развитие существующей системы.</div>
-        </div>
-        <div class="pricing-grid reveal">
-          <article class="price-card"><h3>Бот для заявок и записи</h3><div><div class="price-from">от</div><div class="price">35 000 ₽</div></div><p>Форма сценария, база клиентов, уведомления и простой кабинет.</p></article>
-          <article class="price-card"><h3>CRM / API-интеграция</h3><div><div class="price-from">от</div><div class="price">45 000 ₽</div></div><p>Связка сайта, форм, CRM и уведомлений в один процесс.</p></article>
-          <article class="price-card"><h3>Внутренний инструмент</h3><div><div class="price-from">от</div><div class="price">90 000 ₽</div></div><p>Панель заявок, статусов, доступов, отчетов и действий команды.</p></article>
-          <article class="price-card"><h3>AI/RAG по базе знаний</h3><div><div class="price-from">от</div><div class="price">120 000 ₽</div></div><p>Загрузка документов, поиск, ответы и сценарии эскалации.</p></article>
-          <article class="price-card"><h3>MVP / сервис под ключ</h3><div><div class="price-from">от</div><div class="price">150 000 ₽</div></div><p>Архитектура, backend, интерфейс, интеграции и запуск.</p></article>
-        </div>
-        <p class="price-note reveal">Финальная стоимость зависит от количества ролей, интеграций, объема данных и сроков.</p>
-      </div>
-    </section>
-
-    <section class="section process-section" id="process">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="section-kicker">workflow</span>
-            <h2 class="section-title">Как проходит работа над проектом</h2>
-            <p class="section-desc">Один инженер ведет задачу от бизнес-процесса до логов в продакшене — без потери контекста между менеджером и разработчиком.</p>
-          </div>
-        </div>
+        <div class="section-head reveal"><div><span class="section-kicker" data-i18n="process.kicker">workflow</span><h2 class="section-title" data-i18n="process.title">Как проходит работа над проектом</h2><p class="section-desc" data-i18n="process.desc">Один инженер сохраняет контекст от бизнес-процесса до логов в продакшене.</p></div></div>
         <div class="process reveal">
-          <article class="process-item"><div class="process-num">01</div><div><h3>Разбираем процесс и боль</h3><p>Фиксируем, что сейчас делается руками, где теряются данные и какой результат нужен.</p></div></article>
-          <article class="process-item"><div class="process-num">02</div><div><h3>Определяем первую версию</h3><p>Отделяю обязательные функции от тех, которые можно добавить после проверки MVP.</p></div></article>
-          <article class="process-item"><div class="process-num">03</div><div><h3>Согласуем архитектуру, сроки и бюджет</h3><p>Показываю состав решения, этапы, риски и понятные критерии готовности.</p></div></article>
-          <article class="process-item"><div class="process-num">04</div><div><h3>Разрабатываю и проверяю на реальных сценариях</h3><p>Учитываю ошибки внешних API, дубли, повторные запросы, права и некорректные данные.</p></div></article>
-          <article class="process-item"><div class="process-num">05</div><div><h3>Запускаю и наблюдаю</h3><p>Настраиваю логи, обработку ошибок и проверяю систему после выхода в рабочую среду.</p></div></article>
-          <article class="process-item"><div class="process-num">06</div><div><h3>Передаю и развиваю</h3><p>Документирую ключевые части, помогаю с эксплуатацией и добавляю новые сценарии.</p></div></article>
+          <article class="process-item"><div class="process-num">01</div><div><h3 data-i18n="process.1.title">Разбираем процесс и боль</h3><p data-i18n="process.1.text">Фиксируем, что сейчас делается руками, где теряются данные и какой результат нужен.</p></div></article>
+          <article class="process-item"><div class="process-num">02</div><div><h3 data-i18n="process.2.title">Определяем первую версию</h3><p data-i18n="process.2.text">Отделяем обязательные функции MVP от улучшений, которые можно добавить после проверки.</p></div></article>
+          <article class="process-item"><div class="process-num">03</div><div><h3 data-i18n="process.3.title">Согласуем архитектуру, сроки и бюджет</h3><p data-i18n="process.3.text">Фиксируем состав решения, этапы, риски и понятные критерии готовности.</p></div></article>
+          <article class="process-item"><div class="process-num">04</div><div><h3 data-i18n="process.4.title">Разрабатываем на реальных сценариях</h3><p data-i18n="process.4.text">Учитываем сбои внешних API, дубли, retries, права и некорректные данные.</p></div></article>
+          <article class="process-item"><div class="process-num">05</div><div><h3 data-i18n="process.5.title">Запускаем и наблюдаем</h3><p data-i18n="process.5.text">Настраиваем логи и обработку ошибок, затем проверяем систему в рабочей среде.</p></div></article>
+          <article class="process-item"><div class="process-num">06</div><div><h3 data-i18n="process.6.title">Документируем и развиваем</h3><p data-i18n="process.6.text">Документируем ключевые части, поддерживаем эксплуатацию и добавляем новые сценарии.</p></div></article>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="approach">
+    <section class="section" id="approach">
       <div class="container">
-        <div class="section-head reveal">
-          <div><span class="section-kicker">подход</span><h2 class="section-title">Что получает команда или заказчик</h2></div>
-        </div>
+        <div class="section-head reveal"><div><span class="section-kicker" data-i18n="approach.kicker">подход</span><h2 class="section-title" data-i18n="approach.title">Что получает команда или заказчик</h2></div></div>
         <div class="advantages reveal">
-          <div class="advantage"><p><strong>Сильную backend-базу:</strong> бизнес-логика, базы данных, API, интеграции и фоновые задачи.</p></div>
-          <div class="advantage"><p><strong>Понимание продакшена:</strong> логи, мониторинг, сбои внешних сервисов и восстановление.</p></div>
-          <div class="advantage"><p><strong>Безопасность по умолчанию:</strong> валидация, права доступа, секреты, минимизация доверия к входным данным.</p></div>
-          <div class="advantage"><p><strong>Работу с существующим кодом:</strong> могу разобраться, стабилизировать и развивать без бессмысленного rewrite.</p></div>
-          <div class="advantage"><p><strong>Быстрый прототип:</strong> результат можно проверить до того, как проект станет большим и дорогим.</p></div>
-          <div class="advantage"><p><strong>Прямую коммуникацию:</strong> технические решения и ответственность не теряются между несколькими ролями.</p></div>
+          <div class="advantage"><p data-i18n-html="approach.1"><strong>Сильную backend-базу:</strong> бизнес-логика, базы данных, API, интеграции и фоновые задачи.</p></div>
+          <div class="advantage"><p data-i18n-html="approach.2"><strong>Понимание продакшена:</strong> логи, мониторинг, сбои внешних сервисов и восстановление.</p></div>
+          <div class="advantage"><p data-i18n-html="approach.3"><strong>Безопасность по умолчанию:</strong> валидация, права доступа, секреты и минимизация доверия к входным данным.</p></div>
+          <div class="advantage"><p data-i18n-html="approach.4"><strong>Работу с существующим кодом:</strong> стабилизация и развитие без бессмысленного rewrite.</p></div>
+          <div class="advantage"><p data-i18n-html="approach.5"><strong>Быстрый прототип:</strong> результат можно проверить до того, как проект станет большим и дорогим.</p></div>
+          <div class="advantage"><p data-i18n-html="approach.6"><strong>Прямую коммуникацию:</strong> инженерные решения и ответственность не теряются между ролями.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="stack">
+    <section class="section section-soft" id="stack">
       <div class="container">
-        <div class="section-head reveal">
-          <div><span class="section-kicker">технологии</span><h2 class="section-title">Стек по слоям системы</h2><p class="section-desc">Основной фокус — Python/backend, интеграции и production. Fullstack, infrastructure, AI и безопасность позволяют не терять контекст между слоями продукта.</p></div>
-        </div>
+        <div class="section-head reveal"><div><span class="section-kicker" data-i18n="stack.kicker">технологии</span><h2 class="section-title" data-i18n="stack.title">Стек по слоям системы</h2><p class="section-desc" data-i18n="stack.desc">Основной фокус — Python/backend, интеграции и production. Fullstack, infrastructure, AI и безопасность помогают не терять контекст между слоями продукта.</p></div></div>
         <div class="stack-groups reveal">
-          <article class="stack-group stack-primary"><div class="stack-head"><h3>Core backend</h3><span>основной</span></div><p>Сервисы, API и бизнес-логика</p><div class="stack-pills"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Django</span><span class="tag">Flask</span><span class="tag">asyncio</span><span class="tag">Pydantic</span></div></article>
-          <article class="stack-group"><div class="stack-head"><h3>Data & async</h3></div><p>Хранение, кеши и фоновые процессы</p><div class="stack-pills"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">SQLite</span><span class="tag">Redis</span><span class="tag">SQLAlchemy</span><span class="tag">Alembic</span><span class="tag">Celery</span><span class="tag">queues</span></div></article>
-          <article class="stack-group"><div class="stack-head"><h3>API & integrations</h3></div><p>Связь внешних и внутренних систем</p><div class="stack-pills"><span class="tag">REST API</span><span class="tag">webhooks</span><span class="tag">Telegram Bot API</span><span class="tag">VK API</span><span class="tag">Usedesk</span><span class="tag">Mindbox</span><span class="tag">1С</span><span class="tag">CRM</span></div></article>
-          <article class="stack-group"><div class="stack-head"><h3>Infrastructure</h3></div><p>Доставка и эксплуатация</p><div class="stack-pills"><span class="tag">Docker</span><span class="tag">Linux</span><span class="tag">Nginx</span><span class="tag">Git</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span><span class="tag">self-hosted</span></div></article>
-          <article class="stack-group"><div class="stack-head"><h3>Observability & QA</h3></div><p>Контроль качества и состояния системы</p><div class="stack-pills"><span class="tag">Grafana</span><span class="tag">Kibana</span><span class="tag">structured logging</span><span class="tag">monitoring</span><span class="tag">Pytest</span><span class="tag">Playwright</span><span class="tag">E2E</span></div></article>
-          <article class="stack-group"><div class="stack-head"><h3>Security</h3></div><p>Безопасность приложений и интеграций</p><div class="stack-pills"><span class="tag">JWT</span><span class="tag">RBAC</span><span class="tag">input validation</span><span class="tag">secrets</span><span class="tag">rate limiting</span><span class="tag">secure API design</span></div></article>
-          <article class="stack-group"><div class="stack-head"><h3>AI / ML / CV</h3></div><p>Интеллектуальные функции продукта</p><div class="stack-pills"><span class="tag">OpenAI API</span><span class="tag">LLM</span><span class="tag">LangChain</span><span class="tag">RAG</span><span class="tag">Qdrant</span><span class="tag">embeddings</span><span class="tag">OpenCV</span></div></article>
-          <article class="stack-group"><div class="stack-head"><h3>Frontend & mobile</h3></div><p>Интерфейсы для пользователей и команд</p><div class="stack-pills"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">HTML / CSS</span><span class="tag">Flutter</span></div></article>
-          <article class="stack-group"><div class="stack-head"><h3>Additional languages</h3></div><p>Работа в смешанных кодовых базах</p><div class="stack-pills"><span class="tag">Node.js</span><span class="tag">PHP / Yii2</span><span class="tag">Go</span><span class="tag">Java / Kotlin</span></div></article>
+          <article class="stack-group stack-primary"><div class="stack-head"><h3>Core backend</h3><span>основной</span></div><p data-i18n="stack.backend">Сервисы, API и бизнес-логика</p><div class="stack-pills"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Django</span><span class="tag">Flask</span><span class="tag">asyncio</span><span class="tag">Pydantic</span></div></article>
+          <article class="stack-group"><div class="stack-head"><h3>Data & async</h3></div><p data-i18n="stack.data">Хранение, кеши и фоновые процессы</p><div class="stack-pills"><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">SQLAlchemy</span><span class="tag">Alembic</span><span class="tag">Celery</span><span class="tag">NATS</span></div></article>
+          <article class="stack-group"><div class="stack-head"><h3>API & integrations</h3></div><p data-i18n="stack.integrations">Связь внешних и внутренних систем</p><div class="stack-pills"><span class="tag">REST API</span><span class="tag">OpenAPI</span><span class="tag">webhooks</span><span class="tag">Telegram API</span><span class="tag">Usedesk</span><span class="tag">Mindbox</span><span class="tag">1С</span></div></article>
+          <article class="stack-group"><div class="stack-head"><h3>Infrastructure</h3></div><p data-i18n="stack.infrastructure">Доставка и эксплуатация</p><div class="stack-pills"><span class="tag">Docker</span><span class="tag">Linux</span><span class="tag">Nginx</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span></div></article>
+          <article class="stack-group"><div class="stack-head"><h3>Observability & QA</h3></div><p data-i18n="stack.quality">Контроль качества и состояния системы</p><div class="stack-pills"><span class="tag">Grafana</span><span class="tag">Kibana</span><span class="tag">OpenTelemetry</span><span class="tag">Pytest</span><span class="tag">Playwright</span><span class="tag">E2E</span></div></article>
+          <article class="stack-group"><div class="stack-head"><h3>Security</h3></div><p data-i18n="stack.security">Безопасность приложений и интеграций</p><div class="stack-pills"><span class="tag">JWT</span><span class="tag">RBAC</span><span class="tag">OIDC</span><span class="tag">secrets</span><span class="tag">rate limiting</span></div></article>
+          <article class="stack-group"><div class="stack-head"><h3>AI / ML / CV</h3></div><p data-i18n="stack.ai">Интеллектуальные функции продукта</p><div class="stack-pills"><span class="tag">OpenAI API</span><span class="tag">LLM</span><span class="tag">LangChain</span><span class="tag">RAG</span><span class="tag">Qdrant</span><span class="tag">OpenCV</span></div></article>
+          <article class="stack-group"><div class="stack-head"><h3>Frontend & mobile</h3></div><p data-i18n="stack.frontend">Интерфейсы для пользователей и команд</p><div class="stack-pills"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Flutter</span></div></article>
+          <article class="stack-group"><div class="stack-head"><h3>Additional languages</h3></div><p data-i18n="stack.languages">Работа в смешанных кодовых базах</p><div class="stack-pills"><span class="tag">Node.js</span><span class="tag">PHP / Yii2</span><span class="tag">Go</span><span class="tag">Java / Kotlin</span></div></article>
         </div>
       </div>
     </section>
 
     <section class="cta-wrap" id="contact">
       <div class="container">
-        <div class="cta reveal">
-          <div class="cta-content">
-            <h2>Нужен инженер в команду или система, которая заменит ручную рутину?</h2>
-            <p>По вакансии обсудим роль, команду и технические задачи. По проекту — разберем процесс, выберем разумный формат сотрудничества и определим первую версию решения.</p>
-            <div class="cta-actions">
-              <a class="btn btn-primary" href="https://t.me/dizzy_dev" target="_blank" rel="noopener noreferrer">написать @dizzy_dev</a>
-              <a class="btn btn-secondary" href="https://github.com/DizzyZ7" target="_blank" rel="noopener noreferrer">открыть GitHub</a>
-            </div>
-          </div>
-        </div>
+        <div class="cta reveal"><div class="cta-content"><h2 data-i18n="cta.title">Нужен инженер в команду или система, которая заменит ручную рутину?</h2><p data-i18n="cta.text">По вакансии обсудим роль, команду и технические задачи. По проекту — разберем процесс, выберем разумный формат сотрудничества и определим первую версию решения.</p><div class="cta-actions"><a class="btn btn-primary" href="https://t.me/dizzy_dev" target="_blank" rel="noopener noreferrer" data-i18n="cta.write">написать @dizzy_dev</a><a class="btn btn-secondary" href="https://github.com/DizzyZ7" target="_blank" rel="noopener noreferrer" data-i18n="cta.github">открыть GitHub</a></div></div></div>
       </div>
     </section>
   </main>
@@ -510,7 +351,7 @@
   <footer>
     <div class="container footer-inner">
       <div><span class="serif" style="font-size:16px;color:var(--text);">dimash janibekov</span> · © <span id="year">2026</span></div>
-      <div class="footer-links"><a href="https://t.me/dizzy_dev" target="_blank" rel="noopener noreferrer">Telegram</a><a href="https://github.com/DizzyZ7" target="_blank" rel="noopener noreferrer">GitHub</a><button class="btn-quiet" type="button" data-print style="border:0;background:none;cursor:pointer;color:inherit;">PDF-резюме</button></div>
+      <div class="footer-links"><a href="https://t.me/dizzy_dev" target="_blank" rel="noopener noreferrer">Telegram</a><a href="https://github.com/DizzyZ7" target="_blank" rel="noopener noreferrer">GitHub</a><button class="btn-quiet" type="button" data-print style="border:0;background:none;cursor:pointer;color:inherit;" data-i18n="footer.resume">PDF-резюме</button></div>
     </div>
   </footer>
 
