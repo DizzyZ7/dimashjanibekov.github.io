@@ -38,7 +38,11 @@
 
 html.is-translating body { cursor: progress; }
 
+/* Hiring-first portfolio layout */
 .stats-row { grid-template-columns: repeat(4, 1fr); }
+.expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.expertise-card { min-height: 205px; }
+.stack-groups { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 .project-ownership {
   display: flex;
@@ -108,6 +112,8 @@ html.is-translating body { cursor: progress; }
   .stats-row .stat:nth-child(n+3) { border-top: 1px solid var(--border-soft); }
   .proof-grid { grid-template-columns: 1fr; }
   .proof-card { min-height: 0; }
+  .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stack-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 720px) {
@@ -119,6 +125,8 @@ html.is-translating body { cursor: progress; }
   .project-ownership { align-items: flex-start; flex-direction: column; gap: 3px; }
   .proof-grid { grid-template-columns: 1fr; }
   .proof-card { min-height: 0; }
+  .expertise-grid, .stack-groups { grid-template-columns: 1fr; }
+  .expertise-card { min-height: 0; }
 }
 
 @media (max-width: 430px) {
