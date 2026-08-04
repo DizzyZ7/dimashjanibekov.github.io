@@ -1,74 +1,132 @@
 (() => {
-  const $ = (s, root = document) => root.querySelector(s);
-  const $$ = (s, root = document) => [...root.querySelectorAll(s)];
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const projects = window.PORTFOLIO_PROJECTS || [];
-  const github = 'https://github.com/DizzyZ7/';
-  let lang = localStorage.getItem('portfolio-language') === 'en' ? 'en' : 'ru';
+  const githubBase = "https://github.com/DizzyZ7/";
 
-  function esc(value) {
-    return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  let language = "ru";
+  try {
+    language = localStorage.getItem("portfolio-language") === "en" ? "en" : "ru";
+  } catch (_) {
+    language = "ru";
   }
 
-  function projectCopy(project) { return project[lang] || project.ru || project.en || {}; }
+  function escapeHtml(value) {
+    return String(value ?? "").replace(/[&<>"']/g, character => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      "\"": "&quot;",
+      "'": "&#39;"
+    })[character]);
+  }
+
+  function copyFor(project) {
+    return project[language] || project.ru || project.en || {};
+  }
+
+  function statusFor(project) {
+    if (typeof project.status === "string") return project.status;
+    return project.status?.[language] || project.status?.ru || "public";
+  }
 
   function renderProjects() {
-    const featured = $('#featured');
-    const selected = $('#selected');
+    const featured = $("#featured");
+    const selected = $("#selected");
     if (!featured || !selected) return;
-    const featureList = projects.filter(p => p.featured).slice(0, 5);
-    const selectedList = projects.filter(p => !p.featured).slice(0, 10);
 
-    featured.innerHTML = featureList.map((p, index) => {
-      const c = projectCopy(p);
-      const labels = lang === 'en'
-        ? ['Challenge', 'Architecture', 'Engineering']
-        : ['Задача', 'Архитектура', 'Инженерия'];
-      return `<article class="case">
-        <div class="caseSide">
-          <div><span class="caseIndex">0${index + 1} / ${esc(p.category)}</span><h3>${esc(p.name)}</h3><small>${esc(p.status)}</small></div>
-          <div class="tags">${(p.stack || []).map(x => `<span>${esc(x)}</span>`).join('')}</div>
-          <a class="repo" href="${github}${encodeURIComponent(p.repo)}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        </div>
-        <div class="caseBody"><p class="caseSummary">${esc(c.summary)}</p>
-          <div class="caseEvidence">
-            <div><b>${labels[0]}</b><p>${esc(c.problem)}</p></div>
-            <div><b>${labels[1]}</b><p>${esc(c.architecture)}</p></div>
-            <div><b>${labels[2]}</b><p>${esc(c.engineering)}</p></div>
-          </div>
-        </div>
-      </article>`;
-    }).join('');
+    const labels = language === "en"
+      ? ["Challenge", "Architecture", "Engineering proof"]
+      : ["Задача", "Архитектура", "Инженерное доказательство"];
 
-    selected.innerHTML = selectedList.map(p => {
-      const c = projectCopy(p);
-      return `<article class="work"><small>${esc(p.category)}</small><div><h3>${esc(p.name)}</h3><p>${esc(c.summary)}</p></div><a href="${github}${encodeURIComponent(p.repo)}" target="_blank" rel="noopener noreferrer">repo ↗</a></article>`;
-    }).join('');
+    featured.innerHTML = projects
+      .filter(project => project.featured)
+      .map((project, index) => {
+        const copy = copyFor(project);
+        const repoUrl = `${githubBase}${encodeURIComponent(project.repo)}`;
+        return `
+          <article class="project">
+            <div class="project__meta">
+              <div>
+                <span class="project__index">0${index + 1} / ${escapeHtml(project.category)}</span>
+                <h3>${escapeHtml(project.name)}</h3>
+                <span class="project__status">${escapeHtml(statusFor(project))}</span>
+              </div>
+              <div>
+                <div class="tags">${(project.stack || []).map(item => `<span>${escapeHtml(item)}</span>`).join("")}</div>
+                <a class="text-link" href="${repoUrl}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              </div>
+            </div>
+            <div class="project__body">
+              <p class="project__summary">${escapeHtml(copy.summary)}</p>
+              <div class="project__evidence">
+                <div><b>${labels[0]}</b><p>${escapeHtml(copy.challenge)}</p></div>
+                <div><b>${labels[1]}</b><p>${escapeHtml(copy.architecture)}</p></div>
+                <div><b>${labels[2]}</b><p>${escapeHtml(copy.proof)}</p></div>
+              </div>
+            </div>
+          </article>`;
+      })
+      .join("");
+
+    selected.innerHTML = projects
+      .filter(project => !project.featured)
+      .map(project => {
+        const copy = copyFor(project);
+        const repoUrl = `${githubBase}${encodeURIComponent(project.repo)}`;
+        return `
+          <article class="work">
+            <small>${escapeHtml(project.category)}</small>
+            <div><h3>${escapeHtml(project.name)}</h3><p>${escapeHtml(copy.summary)}</p></div>
+            <a href="${repoUrl}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(project.name)} on GitHub">repo ↗</a>
+          </article>`;
+      })
+      .join("");
   }
 
   function applyLanguage() {
-    document.documentElement.lang = lang;
-    $$('[data-ru][data-en]').forEach(el => {
-      const value = el.dataset[lang];
-      if (value.includes('<i>')) el.innerHTML = value;
-      else el.textContent = value;
+    document.documentElement.lang = language;
+
+    $$('[data-ru][data-en]').forEach(element => {
+      const value = element.dataset[language] || "";
+      if (value.includes("<")) element.innerHTML = value;
+      else element.textContent = value;
     });
-    const button = $('#lang');
-    if (button) button.textContent = lang === 'ru' ? 'EN' : 'RU';
-    document.title = lang === 'ru'
-      ? 'Димаш Джанибеков — Backend / Systems Engineer'
-      : 'Dimash Janibekov — Backend / Systems Engineer';
-    const description = lang === 'ru'
-      ? 'Backend, distributed systems, automation, security-aware architecture и AI engineering. 3+ года коммерческой разработки; независимые системы с 2019 года.'
-      : 'Backend, distributed systems, automation, security-aware architecture and AI engineering. 3+ years of commercial development; independent systems since 2019.';
-    $('meta[name="description"]')?.setAttribute('content', description);
+
+    const languageButton = $("#lang");
+    if (languageButton) {
+      languageButton.textContent = language === "ru" ? "EN" : "RU";
+      languageButton.setAttribute(
+        "aria-label",
+        language === "ru" ? "Switch to English" : "Переключить на русский"
+      );
+    }
+
+    const isRussian = language === "ru";
+    document.title = isRussian
+      ? "Димаш Джанибеков — Backend / Integration & Automation Engineer"
+      : "Dimash Janibekov — Backend / Integration & Automation Engineer";
+
+    const description = isRussian
+      ? "Backend, интеграции и автоматизация: Python, Go, PostgreSQL, REST/OpenAPI, webhooks, надежность и AI/RAG. 3+ года коммерческой разработки."
+      : "Backend, integration and automation engineering with Python, Go, PostgreSQL, REST/OpenAPI, webhooks, reliability and AI/RAG. 3+ years of commercial experience.";
+    $('meta[name="description"]')?.setAttribute("content", description);
+    $('meta[property="og:description"]')?.setAttribute("content", description);
+    $('meta[property="og:title"]')?.setAttribute("content", document.title);
+
     renderProjects();
   }
 
-  $('#lang')?.addEventListener('click', () => {
-    lang = lang === 'ru' ? 'en' : 'ru';
-    localStorage.setItem('portfolio-language', lang);
+  $("#lang")?.addEventListener("click", () => {
+    language = language === "ru" ? "en" : "ru";
+    try {
+      localStorage.setItem("portfolio-language", language);
+    } catch (_) {
+      // The language switch still works when storage is unavailable.
+    }
     applyLanguage();
   });
-  $('#print')?.addEventListener('click', () => window.print());
+
+  $("#print")?.addEventListener("click", () => window.print());
   applyLanguage();
 })();

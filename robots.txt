@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dizzyz7.github.io/dimashjanibekov.github.io/sitemap.xml
