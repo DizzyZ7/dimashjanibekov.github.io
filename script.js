@@ -30,31 +30,44 @@
     return project.status?.[language] || project.status?.ru || "public";
   }
 
+  function projectUrl(project) {
+    if (project.url === null || (!project.url && !project.repo)) return null;
+    if (project.url) return project.url;
+    return `${githubBase}${encodeURIComponent(project.repo)}`;
+  }
+
+  function projectLink(project, label = "GitHub ↗") {
+    const url = projectUrl(project);
+    if (!url) {
+      return `<span class="project__status">${language === "ru" ? "private / NDA-safe" : "private / NDA-safe"}</span>`;
+    }
+    return `<a class="text-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+  }
+
   function renderProjects() {
     const featured = $("#featured");
     const selected = $("#selected");
     if (!featured || !selected) return;
 
     const labels = language === "en"
-      ? ["Challenge", "Architecture", "Engineering proof"]
+      ? ["Problem", "Architecture", "Engineering proof"]
       : ["Задача", "Архитектура", "Инженерное доказательство"];
 
     featured.innerHTML = projects
       .filter(project => project.featured)
       .map((project, index) => {
         const copy = copyFor(project);
-        const repoUrl = `${githubBase}${encodeURIComponent(project.repo)}`;
         return `
           <article class="project">
             <div class="project__meta">
               <div>
-                <span class="project__index">0${index + 1} / ${escapeHtml(project.category)}</span>
+                <span class="project__index">${String(index + 1).padStart(2, "0")} / ${escapeHtml(project.category)}</span>
                 <h3>${escapeHtml(project.name)}</h3>
                 <span class="project__status">${escapeHtml(statusFor(project))}</span>
               </div>
               <div>
                 <div class="tags">${(project.stack || []).map(item => `<span>${escapeHtml(item)}</span>`).join("")}</div>
-                <a class="text-link" href="${repoUrl}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                ${projectLink(project)}
               </div>
             </div>
             <div class="project__body">
@@ -73,12 +86,15 @@
       .filter(project => !project.featured)
       .map(project => {
         const copy = copyFor(project);
-        const repoUrl = `${githubBase}${encodeURIComponent(project.repo)}`;
+        const url = projectUrl(project);
+        const link = url
+          ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(project.name)} on GitHub">repo ↗</a>`
+          : `<span aria-label="private project">private</span>`;
         return `
           <article class="work">
             <small>${escapeHtml(project.category)}</small>
             <div><h3>${escapeHtml(project.name)}</h3><p>${escapeHtml(copy.summary)}</p></div>
-            <a href="${repoUrl}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(project.name)} on GitHub">repo ↗</a>
+            ${link}
           </article>`;
       })
       .join("");
@@ -104,12 +120,12 @@
 
     const isRussian = language === "ru";
     document.title = isRussian
-      ? "Димаш Джанибеков — Backend / Integration & Automation Engineer"
-      : "Dimash Janibekov — Backend / Integration & Automation Engineer";
+      ? "Димаш Джанибеков — Senior Backend / Integration & Automation Engineer"
+      : "Dimash Janibekov — Senior Backend / Integration & Automation Engineer";
 
     const description = isRussian
-      ? "Backend, интеграции и автоматизация: Python, Go, PostgreSQL, REST/OpenAPI, webhooks, надежность и AI/RAG. 3+ года коммерческой разработки."
-      : "Backend, integration and automation engineering with Python, Go, PostgreSQL, REST/OpenAPI, webhooks, reliability and AI/RAG. 3+ years of commercial experience.";
+      ? "Senior Backend / Integration & Automation Engineer: Python, FastAPI, PostgreSQL, Redis, REST/OpenAPI, event-driven системы, надежность, security и AI/RAG. 3+ года коммерческой разработки."
+      : "Senior Backend / Integration & Automation Engineer: Python, FastAPI, PostgreSQL, Redis, REST/OpenAPI, event-driven systems, reliability, security and AI/RAG. 3+ years of commercial experience.";
     $('meta[name="description"]')?.setAttribute("content", description);
     $('meta[property="og:description"]')?.setAttribute("content", description);
     $('meta[property="og:title"]')?.setAttribute("content", document.title);
