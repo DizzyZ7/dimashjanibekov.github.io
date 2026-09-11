@@ -26,8 +26,11 @@ const [html, css, script, projects, robots, sitemap] = await Promise.all([
 const assertions = [
   [html.includes('lang="ru"'), "default document language"],
   [html.includes("data-ru=") && html.includes("data-en="), "bilingual content"],
-  [html.includes("Не доля от всех 24 000 обращений"), "87% metric scope disclaimer"],
-  [html.includes("3+ года коммерческой разработки"), "commercial experience claim"],
+  [html.includes("Senior Backend / Integration &amp; Automation Engineer"), "senior backend positioning"],
+  [html.includes("3+ года коммерческой"), "commercial experience claim"],
+  [html.includes("Метрика относится к выделенным типовым support-"), "87% metric scope disclaimer"],
+  [html.includes("команды из 6 человек"), "MedTech coordination evidence"],
+  [html.includes("пяти ресторанных сетей"), "five-chain integration evidence"],
   [html.includes("DizzyZ7"), "GitHub profile link"],
   [html.includes('rel="canonical"'), "canonical metadata"],
   [html.includes('application/ld+json'), "structured data"],
@@ -35,9 +38,13 @@ const assertions = [
   [css.includes("prefers-reduced-motion"), "reduced motion support"],
   [css.includes("@media print"), "print stylesheet"],
   [script.includes("escapeHtml"), "safe project rendering"],
+  [script.includes("projectUrl"), "private/public project link handling"],
+  [projects.includes('name: "JANQOR"'), "JANQOR active product evidence"],
+  [projects.includes('url: null'), "private JANQOR link safety"],
+  [projects.includes('repo: "ChainScribe-API"'), "ChainScribe evidence"],
   [projects.includes('repo: "StormRelay"'), "StormRelay evidence"],
   [projects.includes('repo: "SignalBox"'), "SignalBox evidence"],
-  [!projects.includes('repo: "Sentinel"'), "no broken Sentinel repository link"],
+  [projects.includes('repo: "Intelligent-Support-Orchestrator-with-RAG-Async-Processing"'), "RAG backend evidence"],
   [robots.includes("sitemap.xml"), "robots sitemap reference"],
   [sitemap.includes("dimashjanibekov.github.io"), "sitemap canonical URL"]
 ];
