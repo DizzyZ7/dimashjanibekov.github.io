@@ -24,6 +24,29 @@ window.PORTFOLIO_PROJECTS = [
     }
   },
   {
+    name: "VINFLOW",
+    repo: "vinflow",
+    category: "B2B SaaS / Document Automation",
+    status: {
+      ru: "public · CI-tested pilot prototype",
+      en: "public · CI-tested pilot prototype"
+    },
+    featured: true,
+    stack: ["Python", "FastAPI", "PostgreSQL", "React", "OCR", "Docker"],
+    ru: {
+      summary: "Система обработки автомобильных документов и учета сделок: загрузка файлов, OCR, проверка данных оператором и контролируемые переходы состояний автомобилей.",
+      challenge: "Документы приходят в разных форматах, данные приходится переносить вручную, а ошибки при внесении в учет дорого обходятся бизнесу.",
+      architecture: "PDF / image intake → OCR & extraction → human review → audited inventory → reserved vehicle → sale workflow.",
+      proof: "Рабочий локальный прототип с разделением организаций, журналированием и проверкой основных сценариев. 78 unit-тестов и smoke-проверка в CI. Не заявляется как готовый production SaaS."
+    },
+    en: {
+      summary: "A vehicle document and inventory workflow: file intake, OCR, operator review and guarded vehicle and sales state transitions.",
+      challenge: "Business documents arrive in incompatible formats and manual re-entry introduces expensive inventory and sales errors.",
+      architecture: "PDF / image intake → OCR & extraction → human review → audited inventory → reserved vehicle → sale workflow.",
+      proof: "A locally deployable tenant-aware pilot prototype with audit history and CI-tested workflows. 78 unit tests and smoke checks passed in CI; not yet production-ready."
+    }
+  },
+  {
     name: "ChainScribe API",
     repo: "ChainScribe-API",
     category: "Python / Security-Focused Backend",
@@ -156,6 +179,30 @@ window.PORTFOLIO_PROJECTS = [
     featured: false,
     ru: { summary: "Cash-flow forecast, liquidity-gap detection и what-if сценарии с FastAPI/Pandas и auditable outputs." },
     en: { summary: "Cash-flow forecasting, liquidity-gap detection and what-if scenarios with FastAPI/Pandas and auditable outputs." }
+  },
+  {
+    name: "Catoku",
+    repo: "cat-sudoku",
+    category: "Telegram Mini App / Game Backend",
+    featured: false,
+    ru: { summary: "Игровая Telegram Mini App: серверная проверка головоломок, уровни, ежедневные задания, сезоны, лидерборды и экономика косметических наград." },
+    en: { summary: "A Telegram Mini App with server-validated puzzles, progression, daily challenges, seasons, leaderboards and a cosmetic reward economy." }
+  },
+  {
+    name: "ISLUMI",
+    repo: "ISLUMI",
+    category: "Fullstack / Telegram Mini App",
+    featured: false,
+    ru: { summary: "Играбельный тестовый прототип мира с островами, экспедициями, коллекцией существ и серверной прогрессией на FastAPI, PostgreSQL и React." },
+    en: { summary: "A playable test prototype with procedural islands, expeditions, creature collection and server-backed progression built with FastAPI, PostgreSQL and React." }
+  },
+  {
+    name: "TOUCH GRASS.exe",
+    repo: "Grass",
+    category: "Interactive Web / Telegram Mini App",
+    featured: false,
+    ru: { summary: "Интерактивная мемная Mini App с Canvas-анимацией, серверными игровыми сессиями, достижениями и ежедневными заданиями. Экспериментальный продукт." },
+    en: { summary: "An interactive meme-themed Mini App with Canvas animation, server-side game sessions, achievements and daily challenges. Experimental product." }
   },
   {
     name: "WorkNest API",

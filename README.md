@@ -1,6 +1,6 @@
 # Dimash Janibekov — Senior Backend Engineering Portfolio
 
-Recruiter-first bilingual portfolio for **Senior Backend / Integration & Automation Engineer** positioning.
+Bilingual engineering portfolio for **Senior Backend / Integration & Automation Engineer**, intended for technical hiring teams and potential engineering project collaborators.
 
 Public site: <https://dizzyz7.github.io/dimashjanibekov.github.io/>
 
@@ -17,15 +17,19 @@ AI/RAG, QA automation, monitoring, Go and TypeScript are shown as engineering br
 The site separates three types of evidence:
 
 - **Commercial experience** — MedTech, HoReCa integrations/automation and Python product development.
-- **Active product engineering** — JANQOR, a private B2B operational control plane.
+- **Active product engineering** — JANQOR (private), VINFLOW (CI-tested paid-pilot prototype), Catoku, ISLUMI and TOUCH GRASS.exe.
 - **Public source evidence** — ChainScribe API, StormRelay, SignalBox, Intelligent Support Orchestrator, WTF, QA E2E, HomeLedger and other repositories.
 
 Claims are intentionally scoped:
 
 - `3+ years` refers to commercial engineering experience;
-- independent engineering practice is shown separately from commercial employment;
+- independent engineering practice is shown separately from commercial experience;
 - `up to 87%` refers only to selected recurring support/operational workflows in a specific integration layer, not all company workload;
 - private work is labeled as private and is not linked to a non-public repository.
+
+## Positioning and contact
+
+The site says only that Dimash is **open to engineering roles and projects**. It does not discuss contracting, legal status, tax regimes or employment arrangements. The front page now includes a compact overview of engineering focus areas, while keeping substantiated project details and separate commercial experience.
 
 ## What the portfolio emphasizes
 
@@ -52,4 +56,4 @@ Then open <http://localhost:8080>.
 node verify-site.mjs
 ```
 
-The check validates required files, bilingual content, SEO metadata, portfolio positioning, flagship project evidence, the scoped automation metric and private-project link safety.
+The check validates required files, bilingual content, SEO metadata, portfolio positioning, flagship project evidence, the scoped automation metric, private-project link safety, and no employment-arrangement terminology.
