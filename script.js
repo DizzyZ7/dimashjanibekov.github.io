@@ -120,12 +120,12 @@
 
     const isRussian = language === "ru";
     document.title = isRussian
-      ? "Димаш Джанибеков — Senior Backend / Integration & Automation Engineer"
-      : "Dimash Janibekov — Senior Backend / Integration & Automation Engineer";
+      ? "Димаш Джанибеков — Senior Backend / Integration & Automation Engineer · работа и проекты"
+      : "Dimash Janibekov — Senior Backend / Integration & Automation Engineer · roles and projects";
 
     const description = isRussian
-      ? "Senior Backend / Integration & Automation Engineer: Python, FastAPI, PostgreSQL, Redis, REST/OpenAPI, event-driven системы, надежность, security и AI/RAG. 3+ года коммерческой разработки."
-      : "Senior Backend / Integration & Automation Engineer: Python, FastAPI, PostgreSQL, Redis, REST/OpenAPI, event-driven systems, reliability, security and AI/RAG. 3+ years of commercial experience.";
+      ? "Инженерное портфолио Димаша Джанибекова: Python backend, API, интеграции, AI и собственные продукты. Открыт к работе и инженерным проектам."
+      : "Dimash Janibekov engineering portfolio: Python backend, APIs, integrations, AI and independent products. Open to roles and engineering projects.";
     $('meta[name="description"]')?.setAttribute("content", description);
     $('meta[property="og:description"]')?.setAttribute("content", description);
     $('meta[property="og:title"]')?.setAttribute("content", document.title);
