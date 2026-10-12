@@ -36,6 +36,12 @@
     return `${githubBase}${encodeURIComponent(project.repo)}`;
   }
 
+  function caseStudyLink(project) {
+    if (!project.caseStudy || !/^cases\/[a-z0-9-]+\.html$/.test(project.caseStudy)) return "";
+    const label = language === "ru" ? "Подробный кейс ↗" : "Case study ↗";
+    return `<a class="text-link" href="${escapeHtml(project.caseStudy)}">${label}</a>`;
+  }
+
   function projectLink(project, label = "GitHub ↗") {
     const url = projectUrl(project);
     if (!url) {
@@ -67,7 +73,7 @@
               </div>
               <div>
                 <div class="tags">${(project.stack || []).map(item => `<span>${escapeHtml(item)}</span>`).join("")}</div>
-                ${projectLink(project)}
+                <div class="project__links">${caseStudyLink(project)}${projectLink(project)}</div>
               </div>
             </div>
             <div class="project__body">
@@ -94,7 +100,7 @@
           <article class="work">
             <small>${escapeHtml(project.category)}</small>
             <div><h3>${escapeHtml(project.name)}</h3><p>${escapeHtml(copy.summary)}</p></div>
-            ${link}
+            <div class="work__links">${caseStudyLink(project)}${link}</div>
           </article>`;
       })
       .join("");

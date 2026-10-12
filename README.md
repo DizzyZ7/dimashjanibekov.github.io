@@ -57,3 +57,13 @@ node verify-site.mjs
 ```
 
 The check validates required files, bilingual content, SEO metadata, portfolio positioning, flagship project evidence, the scoped automation metric, private-project link safety, and no employment-arrangement terminology.
+
+## Case studies
+
+Three bilingual case pages are directly available on GitHub Pages without client-side rendering:
+
+- [VINFLOW](cases/vinflow.html) — OCR and document/inventory workflows; 78 historical CI unit tests, with production limitations clearly stated.
+- [StormRelay](cases/stormrelay.html) — incident correlation, at-least-once processing, runbooks and tracing; illustrative UI explicitly marked as concept.
+- [Catoku](cases/catoku.html) — Telegram Mini App with server-validated gameplay, synced drafts and cosmetic Stars payments.
+
+Each case includes links to public source code, a functional architecture diagram, engineering trade-offs, reviewable evidence, limitations, and a **clearly labeled synthetic interface illustration**. Shared RU/EN preference and accessible navigation work without any external JavaScript dependencies.

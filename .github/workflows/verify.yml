@@ -15,5 +15,6 @@ jobs:
         run: |
           node --check script.js
           node --check projects.js
+          node --check cases/case.js
       - name: Verify portfolio content
         run: node verify-site.mjs

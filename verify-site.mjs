@@ -9,7 +9,12 @@ const requiredFiles = [
   "assets/dimash-janibekov.webp",
   "favicon.svg",
   "robots.txt",
-  "sitemap.xml"
+  "sitemap.xml",
+  "cases/vinflow.html",
+  "cases/stormrelay.html",
+  "cases/catoku.html",
+  "cases/case.css",
+  "cases/case.js"
 ];
 
 await Promise.all(requiredFiles.map(file => access(file)));
@@ -52,10 +57,28 @@ const assertions = [
   [projects.includes('repo: "Grass"'), "TOUCH GRASS evidence"],
   [projects.includes('repo: "SignalBox"'), "SignalBox evidence"],
   [projects.includes('repo: "Intelligent-Support-Orchestrator-with-RAG-Async-Processing"'), "RAG backend evidence"],
+  [html.includes('cases/vinflow.html') && html.includes('cases/stormrelay.html') && html.includes('cases/catoku.html'), "homepage case links"],
+  [projects.includes('caseStudy: "cases/vinflow.html"') && projects.includes('caseStudy: "cases/stormrelay.html"') && projects.includes('caseStudy: "cases/catoku.html"'), "project card case links"],
+  [script.includes("caseStudyLink"), "dynamic case link renderer"],
+  [sitemap.includes("cases/vinflow.html") && sitemap.includes("cases/stormrelay.html") && sitemap.includes("cases/catoku.html"), "sitemap case URLs"],
   [robots.includes("sitemap.xml"), "robots sitemap reference"],
   [sitemap.includes("dimashjanibekov.github.io"), "sitemap canonical URL"]
 ];
 
+for (const slug of ["vinflow", "stormrelay", "catoku"]) {
+  const htmlCase = await readFile(`cases/${slug}.html`, "utf8");
+  const checks = [
+    [htmlCase.includes('<html lang="ru">'), "default Russian language"],
+    [htmlCase.includes("data-ru=") && htmlCase.includes("data-en="), "bilingual case copy"],
+    [htmlCase.includes('rel="canonical"'), "canonical metadata"],
+    [htmlCase.includes('id="architecture"') && htmlCase.includes('id="evidence"'), "architecture and evidence"],
+    [htmlCase.includes("CURRENT LIMITATIONS"), "explicit limitations"],
+    [htmlCase.includes('href="../index.html#contact"'), "contact navigation"],
+    [/(?:Иллюстративн|Концепт|Схематичн)/.test(htmlCase), "synthetic UI disclaimer"],
+    [!/(?:самозанят|самозанятост|self-employed|ГПХ|ТК\\s*РФ|ИП\\s)/i.test(htmlCase), "no employment arrangement copy"]
+  ];
+  for (const [ok, label] of checks) assertions.push([ok, `${slug}: ${label}`]);
+}
 const failed = assertions.filter(([ok]) => !ok);
 if (failed.length) {
   for (const [, label] of failed) console.error(`FAIL: ${label}`);
