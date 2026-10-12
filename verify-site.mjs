@@ -35,7 +35,7 @@ const assertions = [
   [html.includes('rel="canonical"'), "canonical metadata"],
   [html.includes('id="focus"'), "engineering focus section"],
   [html.includes("Рассматриваю работу и инженерные проекты"), "role and project availability"],
-  [!/(?:самозанят|самозанятост|self-employed|ГПХ|ТК\\s*РФ|ИП\\s)/i.test(html), "no employment arrangement copy"],
+  [!/(?:самозанят|самозанятост|self-employed|ГПХ|ТК\s*РФ|ИП\s)/i.test(html), "no employment arrangement copy"],
   [html.includes('application/ld+json'), "structured data"],
   [css.includes("@media (max-width: 760px)"), "mobile breakpoint"],
   [css.includes("prefers-reduced-motion"), "reduced motion support"],
