@@ -25,6 +25,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     name: "VINFLOW",
+    caseStudy: "cases/vinflow.html",
     repo: "vinflow",
     category: "B2B SaaS / Document Automation",
     status: {
@@ -71,6 +72,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     name: "StormRelay",
+    caseStudy: "cases/stormrelay.html",
     repo: "StormRelay",
     category: "Distributed Systems / SRE",
     status: {
@@ -182,6 +184,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     name: "Catoku",
+    caseStudy: "cases/catoku.html",
     repo: "cat-sudoku",
     category: "Telegram Mini App / Game Backend",
     featured: false,
