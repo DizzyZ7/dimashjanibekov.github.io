@@ -954,3 +954,20 @@ footer {
   .timeline time,
   .independent p { color: #222; }
 }
+
+/* Case studies are static links and remain available with JS disabled. */
+.case-spotlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 30px}
+.case-spotlight{display:flex;flex-direction:column;gap:12px;min-height:220px;background:var(--dark);color:#f4f1ea;padding:28px;border:1px solid #41433e;transition:transform .2s ease,background .2s ease}
+.case-spotlight:hover{background:#292c27;transform:translateY(-3px)}
+.case-spotlight small{color:#e9a59b;font:700 10px var(--mono);letter-spacing:.06em}
+.case-spotlight b{font:400 clamp(27px,3vw,39px) var(--serif);margin-top:17px}
+.case-spotlight>span{color:var(--dark-muted);font-size:12px;line-height:1.6}
+.case-spotlight strong{font-size:11px;margin-top:auto;padding-top:14px}
+.project__links,.work__links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.project__links .text-link{white-space:nowrap}
+.work__links{flex-direction:column;align-items:flex-start;align-self:start}
+.work__links .text-link{font-size:10px;white-space:nowrap}
+@media(max-width:1050px){.case-spotlights{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.case-spotlights{grid-template-columns:1fr}.case-spotlight{min-height:185px}.work__links{grid-column:3}}
+@media(max-width:480px){.work__links{grid-column:2;grid-row:2 / span 2}}
+@media print{.case-spotlights{grid-template-columns:repeat(3,1fr)}.case-spotlight{min-height:130px;color:#000;background:#fff}.case-spotlight>span{color:#444}}
