@@ -1,0 +1,32 @@
+/* Progressive enhancement: accessible focus, motion and content rendering. */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+:where(a, button) {
+  -webkit-tap-highlight-color: transparent;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .button, .control, .text-link {
+    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+  }
+  .button:hover, .control:hover {
+    transform: translateY(-2px);
+  }
+  .button:active, .control:active {
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  body::before { display: none !important; }
+  :where(a, button) { transition: none !important; }
+}
